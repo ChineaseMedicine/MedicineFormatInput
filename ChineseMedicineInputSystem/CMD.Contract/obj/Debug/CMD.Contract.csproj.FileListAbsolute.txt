@@ -1,0 +1,5 @@
+E:\TestDemos\ChineseMedicineInputSystem\CMD.Contract\bin\Debug\CMD.Contract.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.Contract\bin\Debug\CMD.Contract.pdb
+E:\TestDemos\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.csprojResolveAssemblyReference.cache
+E:\TestDemos\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.pdb

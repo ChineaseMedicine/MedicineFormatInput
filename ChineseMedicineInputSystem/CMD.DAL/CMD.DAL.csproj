@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E489305-CF2D-480A-9FFC-B0C669D01B68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMD.DAL</RootNamespace>
+    <AssemblyName>CMD.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10311.0\lib\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAgeRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAreaRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDiseaseCategoryRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDiseasePropertyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDiseaseRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDosageFormsRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDrugEffectCategroyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDrugEffectRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDrugRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDurgTasteRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDynastyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BEnvironmentRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BFamousPrescriptionRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BHerbsRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIndicationsRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BMeridianRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BPathogenesisRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BPathogenRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BSeasonRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BSexRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BSymptomRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BSyndromesRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BTherapyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALs\AgeHandler.cs" />
+    <Compile Include="DALs\AreaHandler.cs" />
+    <Compile Include="DALs\BaseHandler.cs" />
+    <Compile Include="DALs\DiseaseCategoryHandler.cs" />
+    <Compile Include="DALs\DiseaseHandler.cs" />
+    <Compile Include="DALs\DiseasePropertyHandler.cs" />
+    <Compile Include="DALs\DosageformsHandler.cs" />
+    <Compile Include="DALs\DrugEffectCategroyHandler.cs" />
+    <Compile Include="DALs\DrugEffectHandler.cs" />
+    <Compile Include="DALs\DrugHandler.cs" />
+    <Compile Include="DALs\DurgTasteHandler.cs" />
+    <Compile Include="DALs\DynastyHandler.cs" />
+    <Compile Include="DALs\EnvironmentHandler.cs" />
+    <Compile Include="DALs\PrescriptionHandler.cs" />
+    <Compile Include="DALs\SeasonHandler.cs" />
+    <Compile Include="DALs\SexHandler.cs" />
+    <Compile Include="DALs\SymptomHandler.cs" />
+    <Compile Include="DALs\SyndromesHandler.cs" />
+    <Compile Include="DrugReferenceDetailRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugReferenceRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="CMDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CMDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CMDModel.edmx.diagram">
+      <DependentUpon>CMDModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMD.Contract\CMD.Contract.csproj">
+      <Project>{8a36fcfb-d0c4-4e46-b5ce-3538d1736f39}</Project>
+      <Name>CMD.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CMDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMDModel.edmx</DependentUpon>
+      <LastGenOutput>CMDModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CMDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMDModel.edmx</DependentUpon>
+      <LastGenOutput>CMDModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,11 @@
+﻿<dxr:DXRibbonWindow x:Class="ChineseMedicineInputSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:view="clr-namespace:ChineseMedicineInputSystem.View"
+        Title="中药数据整理系统" Height="700" Width="1200"
+        UseLayoutRounding="True" WindowStartupLocation="CenterScreen"
+        dxr:DisplayShowModeSelector="True"
+        Icon="/ChineseMedicineInputSystem;component/Images/AppIcon/AppIcon.ico">
+    <view:MainView />
+</dxr:DXRibbonWindow>

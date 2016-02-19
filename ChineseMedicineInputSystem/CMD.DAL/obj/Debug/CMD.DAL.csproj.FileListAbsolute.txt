@@ -1,0 +1,10 @@
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\CMD.DAL.dll.config
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\CMD.DAL.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\CMD.DAL.pdb
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\CMD.Contract.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\EntityFramework.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\CMD.Contract.pdb
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\bin\Debug\EntityFramework.xml
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\obj\Debug\CMD.DAL.csprojResolveAssemblyReference.cache
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\obj\Debug\CMD.DAL.dll
+E:\TestDemos\ChineseMedicineInputSystem\CMD.DAL\obj\Debug\CMD.DAL.pdb

@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D385763-2C77-4F67-9048-24F4441E028F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChineseMedicineInputSystem</RootNamespace>
+    <AssemblyName>ChineseMedicineInputSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.SpellChecker.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2013.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="Helpers\FilePathHelper.cs" />
+    <Compile Include="NotificationObject.cs" />
+    <Compile Include="ViewModel\BasicInfo\Age\AgeViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Area\AreaViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\BasicInfoFolderViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Disease\DiseaseCategoryViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Disease\DiseasePropertyViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Disease\DiseaseViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Drug\DrugEffectCategroyViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Drug\DrugEffectViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Drug\DrugTasteViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Drug\DrugViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Dynasty\DynastyViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Environment\EnvironmentViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\NavBasicInfoViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\BasicInfoViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Prescription\DosageformsViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Prescription\PrescriptionViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Sex\SexViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Symptom\SymptomViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Season\SeasonViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Symptom\SyndromesViewModel.cs" />
+    <Compile Include="View\BasicInfo\Area\AreaView.xaml.cs">
+      <DependentUpon>AreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Area\CreateAreaView.xaml.cs">
+      <DependentUpon>CreateAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Environment\CreateEnvironmentView.xaml.cs">
+      <DependentUpon>CreateEnvironmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Environment\EnvironmentView.xaml.cs">
+      <DependentUpon>EnvironmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Prescription\CreateDosageformsView.xaml.cs">
+      <DependentUpon>CreateDosageformsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Prescription\CreatePrescriptionView.xaml.cs">
+      <DependentUpon>CreatePrescriptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Prescription\DosageformsView.xaml.cs">
+      <DependentUpon>DosageformsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Prescription\PrescriptionView.xaml.cs">
+      <DependentUpon>PrescriptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Common.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\BasicInfo\Age\AgeView.xaml.cs">
+      <DependentUpon>AgeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Age\CreateAgeView.xaml.cs">
+      <DependentUpon>CreateAgeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\BasicInfoView.xaml.cs">
+      <DependentUpon>BasicInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\CreateDiseaseCategoryView.xaml.cs">
+      <DependentUpon>CreateDiseaseCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\CreateDiseasePropertyView.xaml.cs">
+      <DependentUpon>CreateDiseasePropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\CreateDiseaseView.xaml.cs">
+      <DependentUpon>CreateDiseaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\DiseaseCategoryView.xaml.cs">
+      <DependentUpon>DiseaseCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\DiseasePropertyView.xaml.cs">
+      <DependentUpon>DiseasePropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Disease\DiseaseView.xaml.cs">
+      <DependentUpon>DiseaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\CreateDrugEffectCategoryView.xaml.cs">
+      <DependentUpon>CreateDrugEffectCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\CreateDrugEffectView.xaml.cs">
+      <DependentUpon>CreateDrugEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\CreateDrugTasteView.xaml.cs">
+      <DependentUpon>CreateDrugTasteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\CreateDrugView.xaml.cs">
+      <DependentUpon>CreateDrugView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\DrugEffectCategoryView.xaml.cs">
+      <DependentUpon>DrugEffectCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\DrugEffectView.xaml.cs">
+      <DependentUpon>DrugEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\DrugTasteView.xaml.cs">
+      <DependentUpon>DrugTasteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\DrugView.xaml.cs">
+      <DependentUpon>DrugView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Dynasty\CreateDynastyView.xaml.cs">
+      <DependentUpon>CreateDynastyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Dynasty\DynastyView.xaml.cs">
+      <DependentUpon>DynastyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\NavBasicInfoView.xaml.cs">
+      <DependentUpon>NavBasicInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Season\CreateSeasonView.xaml.cs">
+      <DependentUpon>CreateSeasonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Season\SeasonView.xaml.cs">
+      <DependentUpon>SeasonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Sex\CreateSexView.xaml.cs">
+      <DependentUpon>CreateSexView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Sex\SexView.xaml.cs">
+      <DependentUpon>SexView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Symptom\CreateSymptomView.xaml.cs">
+      <DependentUpon>CreateSymptomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Symptom\CreateSyndromesView.xaml.cs">
+      <DependentUpon>CreateSyndromesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Symptom\SymptomView.xaml.cs">
+      <DependentUpon>SymptomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Symptom\SyndromesView.xaml.cs">
+      <DependentUpon>SyndromesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\BasicInfo\Area\AreaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Area\CreateAreaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Environment\CreateEnvironmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Environment\EnvironmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Prescription\CreateDosageformsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Prescription\CreatePrescriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Prescription\DosageformsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Prescription\PrescriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Age\AgeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Age\CreateAgeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\BasicInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\CreateDiseaseCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\CreateDiseasePropertyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\CreateDiseaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\DiseaseCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\DiseasePropertyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Disease\DiseaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\CreateDrugEffectCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\CreateDrugEffectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\CreateDrugTasteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\CreateDrugView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\DrugEffectCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\DrugEffectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\DrugTasteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\DrugView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Dynasty\CreateDynastyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Dynasty\DynastyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\NavBasicInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\BasicInfo\Season\CreateSeasonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Season\SeasonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Sex\CreateSexView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Sex\SexView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Symptom\CreateSymptomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Symptom\CreateSyndromesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Symptom\SymptomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Symptom\SyndromesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CMDImages\Add_16x16.png" />
+    <Resource Include="Images\CMDImages\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcon\AppIcon.ico" />
+    <Resource Include="Images\Contacts\ByState_32x32.png" />
+    <Resource Include="Images\Contacts\Card_32x32.png" />
+    <Resource Include="Images\Contacts\List_32x32.png" />
+    <Resource Include="Images\Contacts\Unknown-user.png" />
+    <Resource Include="Images\FoldersIcons\Announcements.png" />
+    <Resource Include="Images\FoldersIcons\ASP.png" />
+    <Resource Include="Images\FoldersIcons\Customer.png" />
+    <Resource Include="Images\FoldersIcons\Deleted.png" />
+    <Resource Include="Images\FoldersIcons\Draft.png" />
+    <Resource Include="Images\FoldersIcons\Frameworks.png" />
+    <Resource Include="Images\FoldersIcons\IDE.png" />
+    <Resource Include="Images\FoldersIcons\Inbox.png" />
+    <Resource Include="Images\FoldersIcons\Sent.png" />
+    <Resource Include="Images\FoldersIcons\WinForms.png" />
+    <Resource Include="Images\LayoutFlip_16x16.png" />
+    <Resource Include="Images\LayoutFlip_32x32.png" />
+    <Resource Include="Images\LayoutRotate_16x16.png" />
+    <Resource Include="Images\LayoutRotate_32x32.png" />
+    <Resource Include="Images\Mail\Attachment.png" />
+    <Resource Include="Images\Mail\High.png" />
+    <Resource Include="Images\Mail\IsUnreadHeader.png" />
+    <Resource Include="Images\Mail\Low.png" />
+    <Resource Include="Images\Mail\Read.png" />
+    <Resource Include="Images\Mail\Symbol_16x16.png" />
+    <Resource Include="Images\Mail\Symbol_32x32.png" />
+    <Resource Include="Images\Mail\Unread.png" />
+    <Resource Include="Images\Priority_16x16.png" />
+    <Resource Include="Images\ReplyAll_16x16.png" />
+    <Resource Include="Images\Reply_16x16.png" />
+    <Resource Include="Images\Tasks\Category_HouseChores.png" />
+    <Resource Include="Images\Tasks\Category_Shopping.png" />
+    <Resource Include="Images\Tasks\Category_Work.png" />
+    <Resource Include="Images\Tasks\Column_Complete.png" />
+    <Resource Include="Images\Tasks\Column_FlagStatus.png" />
+    <Resource Include="Images\Tasks\Column_Icon.png" />
+    <Resource Include="Images\Tasks\Column_Priority.png" />
+    <Resource Include="Images\Tasks\Completed_32x32.png" />
+    <Resource Include="Images\Tasks\Completed_Flag.png" />
+    <Resource Include="Images\Tasks\Custom_Flag.png" />
+    <Resource Include="Images\Tasks\Deferred_32x32.png" />
+    <Resource Include="Images\Tasks\ListByDate_32x32.png" />
+    <Resource Include="Images\Tasks\Mr.png" />
+    <Resource Include="Images\Tasks\Ms.png" />
+    <Resource Include="Images\Tasks\NextWeek_Flag.png" />
+    <Resource Include="Images\Tasks\NoDate_Flag.png" />
+    <Resource Include="Images\Tasks\Overdue_32x32.png" />
+    <Resource Include="Images\Tasks\Prioritized_32x32.png" />
+    <Resource Include="Images\Tasks\Priority_High.png" />
+    <Resource Include="Images\Tasks\Priority_Low.png" />
+    <Resource Include="Images\Tasks\Prof.png" />
+    <Resource Include="Images\Tasks\Reminder.png" />
+    <Resource Include="Images\Tasks\Status_0.png" />
+    <Resource Include="Images\Tasks\Status_1.png" />
+    <Resource Include="Images\Tasks\ThisWeek_Flag.png" />
+    <Resource Include="Images\Tasks\Today_Flag.png" />
+    <Resource Include="Images\Tasks\ToDoList_32x32.png" />
+    <Resource Include="Images\Tasks\Tomorrow_Flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMD.Contract\CMD.Contract.csproj">
+      <Project>{8a36fcfb-d0c4-4e46-b5ce-3538d1736f39}</Project>
+      <Name>CMD.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMD.DAL\CMD.DAL.csproj">
+      <Project>{7e489305-cf2d-480a-9ffc-b0c669d01b68}</Project>
+      <Name>CMD.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

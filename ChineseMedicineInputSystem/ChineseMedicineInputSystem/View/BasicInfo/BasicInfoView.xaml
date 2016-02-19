@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="ChineseMedicineInputSystem.View.BasicInfo.BasicInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:view="clr-namespace:ChineseMedicineInputSystem.View.BasicInfo"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:viewmodel="clr-namespace:ChineseMedicineInputSystem.ViewModel.BasicInfo"
+             mc:Ignorable="d"  d:DataContext="{dxmvvm:ViewModelSource viewmodel:BasicInfoViewModel}"
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <dxre:HtmlToContentConverter x:Key="HtmlToContentConverter"/>
+        <dxmvvm:ObjectToObjectConverter x:Key="CurrentRowToOpacityConverter" DefaultTarget="1">
+            <dxmvvm:MapItem Source="{x:Null}" Target="0"/>
+        </dxmvvm:ObjectToObjectConverter>
+        <dx:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        <dx:BoolToVisibilityInverseConverter x:Key="boolToVisibilityInverseConverter"/>
+        <dx:EnumToVisibilityConverter x:Key="enumToVisibilityConverter"/>
+        <Style TargetType="{x:Type dxr:DXRibbonWindow}" x:Key="NewMessageWindowStyle">
+            <Setter Property="Height" Value="600"/>
+            <Setter Property="Width" Value="800"/>
+            <Setter Property="Icon" Value="/ChineseMedicineInputSystem;component/Images/AppIcon/AppIcon.ico"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+        </Style>
+        <Style TargetType="{x:Type Image}" x:Key="columnImageStyle">
+            <Setter Property="Stretch" Value="None"/>
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
+        </Style>
+    </UserControl.Resources>
+
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:WindowService WindowType="{x:Type dxr:DXRibbonWindow}"
+                              Title="Message"
+                              WindowStartupLocation="CenterScreen"
+                              WindowShowMode="Dialog"
+                              WindowStyle="{StaticResource NewMessageWindowStyle}">
+            <dxmvvm:WindowService.ViewTemplate>
+                <DataTemplate>
+                    <!--<view:NewMessageContent/>-->
+                </DataTemplate>
+            </dxmvvm:WindowService.ViewTemplate>
+        </dxmvvm:WindowService>
+    </dxmvvm:Interaction.Behaviors>
+
+    <dxb:BarManager>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxr:RibbonControl x:Name="mailRibbonControl">
+                <dxr:RibbonDefaultPageCategory Caption="Default Category">
+                    <dxr:RibbonPage Caption="Mail" MergeOrder="-2">
+                        <dxr:RibbonPageGroup Caption="New/Respond">
+                            <dxb:BarButtonItem Content="New Mail" Command="{Binding CreateNewMessageCommand}" Glyph="{dx:DXImageOffice2013 Image=NewMail_16x16.png}" LargeGlyph="{dx:DXImageOffice2013 Image=NewMail_32x32.png}" />
+                            <dxb:BarButtonItem Content="Reply" Command="{Binding ReplyCommand}" RibbonStyle="SmallWithText" Glyph="/ChineseMedicineInputSystem;component/Images/Reply_16x16.png" />
+                            <dxb:BarButtonItem Content="Forward" Command="{Binding ForwardCommand}" RibbonStyle="SmallWithText" Glyph="{dx:DXImageOffice2013 Image=Forward_16x16.png}" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Delete">
+                            <dxb:BarButtonItem Content="Delete" Command="{Binding DeleteCommand}" Glyph="{dx:DXImageOffice2013 Image=Delete_16x16.png}" LargeGlyph="{dx:DXImageOffice2013 Image=Delete_32x32.png}" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Tags">
+                            <dxb:BarButtonItem Content="Unread/Read" Command="{Binding ChangeUnreadStatusCommand}" Glyph="{dx:DXImageOffice2013 Image=Mail_16x16.png}" LargeGlyph="{dx:DXImageOffice2013 Image=Mail_32x32.png}" RibbonStyle="SmallWithText" />
+                            <dxb:BarSubItem Content="Priority" Glyph="/ChineseMedicineInputSystem;component/Images/Priority_16x16.png">
+                                <dxb:BarSubItem.Items>
+                                    <dxb:BarButtonItem Content="Low priority" Command="{Binding SetLowPriorityCommand}" Glyph="/ChineseMedicineInputSystem;component/Images/Mail/Low.png" />
+                                    <dxb:BarButtonItem Content="Medium priority" Command="{Binding SetMediumPriorityCommand}"/>
+                                    <dxb:BarButtonItem Content="High priority" Command="{Binding SetHighPriorityCommand}" Glyph="/ChineseMedicineInputSystem;component/Images/Mail/High.png" />
+                                </dxb:BarSubItem.Items>
+                            </dxb:BarSubItem>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Layout">
+                            <dxb:BarButtonItem Content="Rotate Layout" Command="{Binding ChangeLayoutCommand}" Glyph="/ChineseMedicineInputSystem;component/Images/LayoutRotate_16x16.png" LargeGlyph="/ChineseMedicineInputSystem;component/Images/LayoutRotate_32x32.png" />
+                            <dxb:BarButtonItem Content="Flip Layout" Command="{Binding FlipLayoutCommand}" Glyph="/ChineseMedicineInputSystem;component/Images/LayoutFlip_16x16.png" LargeGlyph="/ChineseMedicineInputSystem;component/Images/LayoutFlip_32x32.png" />
+                            <dxb:BarCheckItem Content="Message preview" IsChecked="{Binding ShowMessagePreview, Mode=TwoWay}" LargeGlyph="{dx:DXImageOffice2013 Image=GroupFooter_32x32.png}" Glyph="{dx:DXImageOffice2013 Image=GroupFooter_16x16.png}" />
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+            </dxr:RibbonControl>
+            <dxlc:LayoutControl Grid.Row="1" Orientation="{Binding LayoutOrientation}" StretchContentVertically="True" StretchContentHorizontally="True" Padding="0" Margin="0">
+                <dxmvvm:Interaction.Behaviors>
+                    <!--<behaviors:LayoutControlFlipBehavior LayoutMode="{Binding LayoutMode}"/>-->
+                </dxmvvm:Interaction.Behaviors>
+                <dxg:GridControl x:Name="grid" Margin="0,0,4,0" ItemsSource="{Binding ItemsSource}" SelectedItem="{Binding Path=CurrentMessage, Mode=TwoWay}" AutoExpandAllGroups="True"
+                                 DesignTimeShowSampleData="False" MinWidth="150" MinHeight="150" >
+                    <!--behaviors:LayoutControlFlipBehavior.OrderIndex="1">-->
+                    <dxmvvm:Interaction.Behaviors>
+                        <dxmvvm:EventToCommand EventName="CustomColumnDisplayText" Command="{Binding MailCustomColumnDisplayTextCommand}" PassEventArgsToCommand="True"/>
+                    </dxmvvm:Interaction.Behaviors>
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn FieldName="Priority" Width="20" AllowResizing="False" FixedWidth="True" HorizontalHeaderContentAlignment="Right">
+                            <dxg:GridColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" VerticalAlignment="Center" Source="/ChineseMedicineInputSystem;component/Images/Mail/High.png"/>
+                                </DataTemplate>
+                            </dxg:GridColumn.HeaderTemplate>
+                            <dxg:GridColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Center">
+                                        <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="/ChineseMedicineInputSystem;component/Images/Mail/High.png"
+                                               Visibility="{Binding RowData.Row.Priority, Converter={StaticResource enumToVisibilityConverter}, ConverterParameter=High}"/>
+                                        <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="/ChineseMedicineInputSystem;component/Images/Mail/Low.png"
+                                               Visibility="{Binding RowData.Row.Priority, Converter={StaticResource enumToVisibilityConverter}, ConverterParameter=Low}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="IsUnread" Width="20" AllowResizing="False" FixedWidth="True">
+                            <dxg:GridColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" VerticalAlignment="Center" Source="/ChineseMedicineInputSystem;component/Images/Mail/IsUnreadHeader.png"/>
+                                </DataTemplate>
+                            </dxg:GridColumn.HeaderTemplate>
+                            <dxg:GridColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalAlignment="Center">
+                                        <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="/ChineseMedicineInputSystem;component/Images/Mail/Read.png" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               Visibility="{Binding RowData.Row.IsUnread, Converter={StaticResource boolToVisibilityInverseConverter}}"/>
+                                        <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="/ChineseMedicineInputSystem;component/Images/Mail/Unread.png" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               Visibility="{Binding RowData.Row.IsUnread, Converter={StaticResource boolToVisibilityConverter}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="HasAttachment" Width="20" AllowResizing="False" FixedWidth="True">
+                            <dxg:GridColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="{dx:DXImageOffice2013 Image=Attachment_16x16.png}"/>
+                                </DataTemplate>
+                            </dxg:GridColumn.HeaderTemplate>
+                            <dxg:GridColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Style="{StaticResource columnImageStyle}" Width="13" Height="13" Source="{dx:DXImageOffice2013 Image=Attachment_16x16.png}"
+                                           Visibility="{Binding RowData.Row.HasAttachment, Converter={StaticResource boolToVisibilityConverter}}"/>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="Subject" Header="Subject" ColumnFilterMode="DisplayText" GroupIndex="0"/>
+                        <dxg:GridColumn FieldName="Name" Header="From" Width="90" GroupIndex="1"/>
+                        <dxg:GridColumn FieldName="CreateDate" Header="Create Date" Width="85" />
+                        <dxg:GridColumn FieldName="ModifyDate" Header="Last Modify Date" Width="85" />
+                    </dxg:GridControl.Columns>
+                    <dxg:GridControl.GroupSummary>
+                        <dxg:GridSummaryItem SummaryType="Count"/>
+                    </dxg:GridControl.GroupSummary>
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="view" HeaderPanelMinHeight="24" RowMinHeight="22" AutoWidth="True" AllowPerPixelScrolling="True"  ShowSearchPanelMode="Always" ShowGroupedColumns="True" AllowEditing="False" NavigationStyle="Row" ShowVerticalLines="False"
+                                       ShowIndicator="False" UseLightweightTemplates="None" SearchPanelNullText="Search Current Mailbox (Ctrl + F)">
+                            <dxmvvm:Interaction.Behaviors>
+                                <dxmvvm:EventToCommand Event="dxg:TableView.RowDoubleClick" Command="{Binding OpenMessageCommand}"/>
+                            </dxmvvm:Interaction.Behaviors>
+                            <dxg:TableView.DataRowTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <dx:MeasurePixelSnapper>
+                                            <ContentPresenter x:Name="defaultRowPresenter" Content="{Binding}" ContentTemplate="{Binding View.DefaultDataRowTemplate}" />
+                                        </dx:MeasurePixelSnapper>
+                                        <dxe:TextEdit EditMode="InplaceInactive" Text="{Binding Path=DataContext.PlainText, Mode=OneWay}" MaxHeight="28" Foreground="Gray" TextTrimming="CharacterEllipsis"
+                                                      Visibility="{Binding Path=View.DataControl.DataContext.ShowMessagePreview, Converter={StaticResource boolToVisibilityConverter}}" />
+                                        <!--Margin="{Binding Path=View.VisibleColumns, Converter={view:VisibleColumnsToMarginConverter}}"/> -->
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dxg:TableView.DataRowTemplate>
+                            <dxg:TableView.CellStyle>
+                                <Style TargetType="{x:Type dxg:CellContentPresenter}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RowData.Row.IsUnread}" Value="True">
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </dxg:TableView.CellStyle>
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </dxlc:LayoutControl>
+        </Grid>
+    </dxb:BarManager>
+
+
+</UserControl>

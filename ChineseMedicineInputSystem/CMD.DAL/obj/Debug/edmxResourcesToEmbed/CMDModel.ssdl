@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMDBasicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="BAgeRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BAreaRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDiseaseCategoryRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDiseasePropertyRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDiseaseRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiseaseProperty_Id" Type="bigint" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDosageFormsRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDrugEffectCategroyRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDrugEffectRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDrugRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IndicationsRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="MeridianRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="DrugEffectRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="DrugEffectCategoryRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="HerbsRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="DurgTasteRecord_Id" Type="bigint" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDurgTasteRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BDynastyRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsAncient" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BEnvironmentRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BFamousPrescriptionRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BHerbsRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BIndicationsRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BMeridianRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BPathogenesisRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BPathogenRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BSeasonRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BSexRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BSymptomRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BSyndromesRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CMDBasic.dbo.BTherapyRecord' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BTherapyRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="CreateBy" />
+      <PropertyRef Name="UpdateBy" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="UpdateTime" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiseaseCategory_Id" Type="bigint" Nullable="false" />
+    <Property Name="Dynasty_Id" Type="bigint" Nullable="false" />
+    <Property Name="Disease_Id" Type="bigint" Nullable="false" />
+    <Property Name="DiseaseProperty_Id" Type="bigint" Nullable="false" />
+    <Property Name="Season_Id" Type="bigint" Nullable="false" />
+    <Property Name="Environment_Id" Type="bigint" Nullable="false" />
+    <Property Name="Age_Id" Type="bigint" Nullable="false" />
+    <Property Name="Sex_Id" Type="bigint" Nullable="false" />
+    <Property Name="Symptom_Id" Type="bigint" Nullable="false" />
+    <Property Name="Syndromes_Id" Type="bigint" Nullable="false" />
+    <Property Name="DosageForms_Id" Type="bigint" Nullable="false" />
+    <Property Name="FamousPrescription_Id" Type="bigint" Nullable="false" />
+    <Property Name="DrugReference_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrugReferenceDetailRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Drug_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrugReferenceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DrugReferenceDetail_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CMDBasicModelStoreContainer">
+    <EntitySet Name="BAgeRecord" EntityType="Self.BAgeRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BAreaRecord" EntityType="Self.BAreaRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDiseaseCategoryRecord" EntityType="Self.BDiseaseCategoryRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDiseasePropertyRecord" EntityType="Self.BDiseasePropertyRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDiseaseRecord" EntityType="Self.BDiseaseRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDosageFormsRecord" EntityType="Self.BDosageFormsRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDrugEffectCategroyRecord" EntityType="Self.BDrugEffectCategroyRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDrugEffectRecord" EntityType="Self.BDrugEffectRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDrugRecord" EntityType="Self.BDrugRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDurgTasteRecord" EntityType="Self.BDurgTasteRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BDynastyRecord" EntityType="Self.BDynastyRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BEnvironmentRecord" EntityType="Self.BEnvironmentRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BFamousPrescriptionRecord" EntityType="Self.BFamousPrescriptionRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BHerbsRecord" EntityType="Self.BHerbsRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIndicationsRecord" EntityType="Self.BIndicationsRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BMeridianRecord" EntityType="Self.BMeridianRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BPathogenesisRecord" EntityType="Self.BPathogenesisRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BPathogenRecord" EntityType="Self.BPathogenRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BSeasonRecord" EntityType="Self.BSeasonRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BSexRecord" EntityType="Self.BSexRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BSymptomRecord" EntityType="Self.BSymptomRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BSyndromesRecord" EntityType="Self.BSyndromesRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContentRecord" EntityType="Self.ContentRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugReferenceDetailRecord" EntityType="Self.DrugReferenceDetailRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugReferenceRecord" EntityType="Self.DrugReferenceRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BTherapyRecord" EntityType="Self.BTherapyRecord" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[BTherapyRecord].[Id] AS [Id], 
+[BTherapyRecord].[Name] AS [Name], 
+[BTherapyRecord].[CreateBy] AS [CreateBy], 
+[BTherapyRecord].[UpdateBy] AS [UpdateBy], 
+[BTherapyRecord].[CreateTime] AS [CreateTime], 
+[BTherapyRecord].[UpdateTime] AS [UpdateTime], 
+[BTherapyRecord].[IsActive] AS [IsActive]
+FROM [dbo].[BTherapyRecord] AS [BTherapyRecord]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
