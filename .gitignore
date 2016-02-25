@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.rar
 
 # Precompiled Headers
 *.gch
@@ -12,6 +13,7 @@
 *.so
 *.dylib
 *.dll
+*.pdb
 
 # Fortran module files
 *.mod
@@ -26,3 +28,7 @@
 *.exe
 *.out
 *.app
+
+obj/
+bin/
+release/

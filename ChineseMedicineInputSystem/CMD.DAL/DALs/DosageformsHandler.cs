@@ -8,7 +8,7 @@ namespace CMD.DAL.DALs
     {
         public override void SaveRecord(DosageformsBo bo)
         {
-            var record = new BFamousPrescriptionRecord
+            var record = new BDosageFormsRecord
             {
                 CreateBy = bo.CreateBy,
                 CreateTime = bo.CreateTime,
@@ -18,14 +18,14 @@ namespace CMD.DAL.DALs
                 UpdateTime = bo.UpdateTime,
             };
             var cmd = new CMDBasicEntities();
-            cmd.BFamousPrescriptionRecords.Add(record);
+            cmd.BDosageFormsRecords.Add(record);
             cmd.SaveChanges();
         }
 
         public override bool DuplicateQuery(string name)
         {
             var cmd = new CMDBasicEntities();
-            var record = cmd.BFamousPrescriptionRecords.FirstOrDefault(o => o.Name == name);
+            var record = cmd.BDosageFormsRecords.FirstOrDefault(o => o.Name == name);
 
             if (null != record)
             {
@@ -37,7 +37,7 @@ namespace CMD.DAL.DALs
         public override List<DosageformsBo> LoadBos()
         {
             var cmd = new CMDBasicEntities();
-            return (from record in cmd.BFamousPrescriptionRecords.Where(o => 1 == 1)
+            return (from record in cmd.BDosageFormsRecords.Where(o => 1 == 1)
                    select new DosageformsBo
                    {
                        Id = record.Id,
@@ -53,10 +53,10 @@ namespace CMD.DAL.DALs
         public override void DeleteRecord(long id)
         {
             var cmd = new CMDBasicEntities();
-            var record = cmd.BFamousPrescriptionRecords.FirstOrDefault(o => o.Id == id);
+            var record = cmd.BDosageFormsRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BFamousPrescriptionRecords.Remove(record);
+                cmd.BDosageFormsRecords.Remove(record);
                 cmd.SaveChanges();
             }
         }

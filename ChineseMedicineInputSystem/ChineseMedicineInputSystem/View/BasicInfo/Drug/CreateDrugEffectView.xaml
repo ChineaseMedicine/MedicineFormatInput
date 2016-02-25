@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
             <dxr:RibbonControl x:Name="mailRibbonControl">
                 <dxr:RibbonDefaultPageCategory Caption="Default Category">
-                    <dxr:RibbonPage Caption="Drug Effect" MergeOrder="-2">
+                    <dxr:RibbonPage Caption="新建药品功效" MergeOrder="-2">
                         <dxr:RibbonPageGroup Caption="保存/取消/重复查询">
                             <dxb:BarButtonItem Content="保存" Command="{Binding SaveNewDrugEffectCommand}" Glyph="{dx:DXImageOffice2013 Image=Save_16x16.png}" LargeGlyph="{dx:DXImageOffice2013 Image=Save_32x32.png}" />
                             <dxb:BarButtonItem Content="取消" Command="{Binding ColseWindowConmmand}" Glyph="{dx:DXImageOffice2013 Image=Close_16x16.png}" LargeGlyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" />

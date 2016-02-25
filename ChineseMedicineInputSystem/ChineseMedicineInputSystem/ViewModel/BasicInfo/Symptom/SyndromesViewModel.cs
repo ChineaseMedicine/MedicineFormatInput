@@ -120,9 +120,9 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             {
                 Name = string.Empty,
                 IsActive = false,
-                CreateBy = "SYSTEM_SET",
+                CreateBy = CurrentUser,
                 CreateTime = DateTime.Now,
-                UpdateBy = "SYSTEM_SET",
+                UpdateBy = CurrentUser,
                 UpdateTime = DateTime.Now,
             };
 
