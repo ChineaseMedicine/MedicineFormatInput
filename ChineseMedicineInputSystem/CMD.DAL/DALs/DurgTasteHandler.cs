@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CMD.DAL.DALs
 {
-    public class DurgTasteHandler
+    public class DrugTasteHandler
     {
         public void SaveRecord(DurgTasteBo bo)
         {

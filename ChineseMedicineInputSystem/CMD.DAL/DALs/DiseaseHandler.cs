@@ -37,7 +37,7 @@ namespace CMD.DAL.DALs
             return false;
         }
 
-        public List<BDiseaseRecord> LoadBAgeRecords()
+        public List<BDiseaseRecord> LoadBos()
         {
             CMDBasicEntities cmd = new CMDBasicEntities();
             return cmd.BDiseaseRecords.Where(o => 1 == 1).ToList();

@@ -54,6 +54,8 @@
     <Compile Include="Models\DurgTasteBo.cs" />
     <Compile Include="Models\DynastyBo.cs" />
     <Compile Include="Models\EnvironmentBo.cs" />
+    <Compile Include="Models\HerbsBo.cs" />
+    <Compile Include="Models\MeteDataBo.cs" />
     <Compile Include="Models\PrescriptionBo.cs" />
     <Compile Include="Models\SeasonBo.cs" />
     <Compile Include="Models\SexBo.cs" />

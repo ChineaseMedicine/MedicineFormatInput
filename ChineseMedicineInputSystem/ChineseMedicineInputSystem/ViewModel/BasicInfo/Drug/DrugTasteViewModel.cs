@@ -41,7 +41,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
 
                 if (!result)
                 {
-                    DurgTasteHandler handler = new DurgTasteHandler();
+                    DrugTasteHandler handler = new DrugTasteHandler();
 
                     CurrentBo.CreateTime = DateTime.Now;
                     CurrentBo.UpdateTime = DateTime.Now;
@@ -60,7 +60,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
 
         public void DeleteDurgTast()
         {
-            DurgTasteHandler handler = new DurgTasteHandler();
+            DrugTasteHandler handler = new DrugTasteHandler();
             handler.DeleteBDurgTasteRecord(CurrentSelectedBo.Id);
             ItemsSource.Remove(CurrentSelectedBo);
         }
@@ -75,7 +75,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         }
         private void RefreshData()
         {
-            DurgTasteHandler handler = new DurgTasteHandler();
+            DrugTasteHandler handler = new DrugTasteHandler();
             var ItemRecords = new List<DurgTasteBo>();
             var records = handler.LoadBDurgTasteRecords();
             foreach (var record in records)
@@ -105,7 +105,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             }
             else
             {
-                DurgTasteHandler handler = new DurgTasteHandler();
+                DrugTasteHandler handler = new DrugTasteHandler();
                 result = handler.DuplicateQuery(CurrentBo.Name);
 
                 if (result)

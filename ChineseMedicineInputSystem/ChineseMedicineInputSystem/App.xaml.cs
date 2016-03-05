@@ -1,7 +1,9 @@
 ﻿using ChineseMedicineInputSystem.Helpers;
 using ChineseMedicineInputSystem.View.BasicInfo;
+using ChineseMedicineInputSystem.View.Metedata;
 using ChineseMedicineInputSystem.ViewModel;
 using ChineseMedicineInputSystem.ViewModel.BasicInfo;
+using ChineseMedicineInputSystem.ViewModel.Metedata;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI;
 using DevExpress.Xpf.Core;
@@ -38,8 +40,8 @@ namespace ChineseMedicineInputSystem
         {
             ViewInjectionManager.Default.Inject(Regions.Navigation, ModuleType.BasicInfo,
                 () => NavBasicInfoViewModel.Create(), typeof(NavBasicInfoView));
-            //ViewInjectionManager.Default.Inject(Regions.Navigation, ModuleType.Tasks,
-            //    () => TasksNavigationViewModel.Create(), typeof(NavBarTasksView));
+            ViewInjectionManager.Default.Inject(Regions.Navigation, ModuleType.Metedata,
+                () => NavMetedataViewModel.Create(), typeof(NavMetedataView));
             //ViewInjectionManager.Default.Inject(Regions.Navigation, ModuleType.Calendar,
             //    () => CalendarNavigationViewModel.Create(), typeof(NavBarCalendarView));
             //ViewInjectionManager.Default.Inject(Regions.Navigation, ModuleType.Contacts,
@@ -49,6 +51,7 @@ namespace ChineseMedicineInputSystem
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Dynasty, () => DynastyViewModel.Create(), typeof(DynastyView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Age, () => AgeViewModel.Create(), typeof(AgeView));
 
+            ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Herbs, () => DrugHerbsViewModel.Create(), typeof(DrugHerbsView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.DrugTaste, () => DrugTasteViewModel.Create(), typeof(DrugTasteView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.DrugEffect, () => DrugEffectViewModel.Create(), typeof(DrugEffectView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.DrugEffectCategroy, () => DrugEffectCategroyViewModel.Create(), typeof(DrugEffectCategoryView));
@@ -67,7 +70,9 @@ namespace ChineseMedicineInputSystem
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Sex, () => SexViewModel.Create(), typeof(SexView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Symptom, () => SymptomViewModel.Create(), typeof(SymptomView));
             ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Syndromes, () => SyndromesViewModel.Create(), typeof(SyndromesView));
-            //ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Tasks, () => TasksViewModel.Create(), typeof(TasksView));
+            
+            
+            ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Metedata, () => MetedataViewModel.Create(), typeof(MetedataView));
             //ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Calendar, () => CalendarViewModel.Create(), typeof(CalendarView));
             //ViewInjectionManager.Default.Inject(Regions.Main, ModuleType.Contacts, () => ContactsViewModel.Create(), typeof(ContactsView));
         }

@@ -150,6 +150,8 @@
     <Compile Include="DALs\DurgTasteHandler.cs" />
     <Compile Include="DALs\DynastyHandler.cs" />
     <Compile Include="DALs\EnvironmentHandler.cs" />
+    <Compile Include="DALs\HerbsHandler.cs" />
+    <Compile Include="DALs\MainSourceHandler.cs" />
     <Compile Include="DALs\PrescriptionHandler.cs" />
     <Compile Include="DALs\SeasonHandler.cs" />
     <Compile Include="DALs\SexHandler.cs" />
@@ -159,6 +161,51 @@
       <DependentUpon>CMDModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DrugReferenceRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MMainSourceRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationAgeRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationDiseasePropertyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationDosageRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationDrugRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationDynastyRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationEnvironmentRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationFamousPrescriptionRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationPathogenesisRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationPhysiqueRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationSeasonRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationSexRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationSymptomRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationSyndromesRecord.cs">
+      <DependentUpon>CMDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRelationTherapyRecord.cs">
       <DependentUpon>CMDModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

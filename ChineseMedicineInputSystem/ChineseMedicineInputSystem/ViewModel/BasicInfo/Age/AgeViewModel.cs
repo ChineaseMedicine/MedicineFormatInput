@@ -45,6 +45,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
 
                     CurrentAgeBo.CreateTime = DateTime.Now;
                     CurrentAgeBo.UpdateTime = DateTime.Now;
+                    CurrentAgeBo.Name = CurrentAgeBo.Name.Trim();
 
                     handler.SaveRecord(CurrentAgeBo);
 
@@ -105,18 +106,27 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             }
             else
             {
-                AgeHandler handler = new AgeHandler();
-                result = handler.DuplicateQuery(CurrentAgeBo.Name);
+                string ageName = CurrentAgeBo.Name.Trim();
 
-                if (result)
+                if (string.IsNullOrEmpty(ageName))
                 {
-                    this.GetService<INotificationService>().CreatePredefinedNotification("Query Result.", "审核不通过,该名称已经被输入", "").ShowAsync();
+                    this.GetService<INotificationService>().CreatePredefinedNotification("Task Changed", "年龄段名称不能为空", "").ShowAsync();
                 }
                 else
                 {
-                    if (showResultMessage)
+                    var handler = new AgeHandler();
+                    result = handler.DuplicateQuery(ageName);
+
+                    if (result)
                     {
-                        this.GetService<INotificationService>().CreatePredefinedNotification("Query Result.", "审核通过,可以保存。", "").ShowAsync();
+                        this.GetService<INotificationService>().CreatePredefinedNotification("Query Result.", "审核不通过,该名称已经被输入", "").ShowAsync();
+                    }
+                    else
+                    {
+                        if (showResultMessage)
+                        {
+                            this.GetService<INotificationService>().CreatePredefinedNotification("Query Result.", "审核通过,可以保存。", "").ShowAsync();
+                        }
                     }
                 }
             }

@@ -331,6 +331,219 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MMainSourceRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MMainSourceRecord">
+        <MappingFragment StoreEntitySet="MMainSourceRecord">
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="DiseaseCategory" ColumnName="DiseaseCategory" />
+          <ScalarProperty Name="DiseaseName" ColumnName="DiseaseName" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="CaseNumber" ColumnName="CaseNumber" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationAgeRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationAgeRecord">
+        <MappingFragment StoreEntitySet="MRelationAgeRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="AgeId" ColumnName="AgeId" />
+          <ScalarProperty Name="AgeName" ColumnName="AgeName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationDiseasePropertyRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationDiseasePropertyRecord">
+        <MappingFragment StoreEntitySet="MRelationDiseasePropertyRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="DiseasePropertyCategoryId" ColumnName="DiseasePropertyCategoryId" />
+          <ScalarProperty Name="DiseasePropertyCategoryName" ColumnName="DiseasePropertyCategoryName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationDosageRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationDosageRecord">
+        <MappingFragment StoreEntitySet="MRelationDosageRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="DosageId" ColumnName="DosageId" />
+          <ScalarProperty Name="DosageName" ColumnName="DosageName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationDrugRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationDrugRecord">
+        <MappingFragment StoreEntitySet="MRelationDrugRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="DrugId" ColumnName="DrugId" />
+          <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationDynastyRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationDynastyRecord">
+        <MappingFragment StoreEntitySet="MRelationDynastyRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="DynastyId" ColumnName="DynastyId" />
+          <ScalarProperty Name="DynastyName" ColumnName="DynastyName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationEnvironmentRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationEnvironmentRecord">
+        <MappingFragment StoreEntitySet="MRelationEnvironmentRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="EnvironmentId" ColumnName="EnvironmentId" />
+          <ScalarProperty Name="EnvironmentName" ColumnName="EnvironmentName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationFamousPrescriptionRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationFamousPrescriptionRecord">
+        <MappingFragment StoreEntitySet="MRelationFamousPrescriptionRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="FamousPrescriptionId" ColumnName="FamousPrescriptionId" />
+          <ScalarProperty Name="FamousPrescriptionName" ColumnName="FamousPrescriptionName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationPathogenesisRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationPathogenesisRecord">
+        <MappingFragment StoreEntitySet="MRelationPathogenesisRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="PathogenesisId" ColumnName="PathogenesisId" />
+          <ScalarProperty Name="PathogenesisName" ColumnName="PathogenesisName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationPhysiqueRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationPhysiqueRecord">
+        <MappingFragment StoreEntitySet="MRelationPhysiqueRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="PhysiqueId" ColumnName="PhysiqueId" />
+          <ScalarProperty Name="PhysiqueName" ColumnName="PhysiqueName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationSeasonRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationSeasonRecord">
+        <MappingFragment StoreEntitySet="MRelationSeasonRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+          <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationSexRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationSexRecord">
+        <MappingFragment StoreEntitySet="MRelationSexRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="SexId" ColumnName="SexId" />
+          <ScalarProperty Name="SexName" ColumnName="SexName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationSymptomRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationSymptomRecord">
+        <MappingFragment StoreEntitySet="MRelationSymptomRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="SymptomId" ColumnName="SymptomId" />
+          <ScalarProperty Name="SymptomName" ColumnName="SymptomName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationSyndromesRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationSyndromesRecord">
+        <MappingFragment StoreEntitySet="MRelationSyndromesRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="SyndromesId" ColumnName="SyndromesId" />
+          <ScalarProperty Name="SyndromesName" ColumnName="SyndromesName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRelationTherapyRecords">
+      <EntityTypeMapping TypeName="CMDBasicModel.MRelationTherapyRecord">
+        <MappingFragment StoreEntitySet="MRelationTherapyRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
+          <ScalarProperty Name="TherapyId" ColumnName="TherapyId" />
+          <ScalarProperty Name="TherapyName" ColumnName="TherapyName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="BTherapyRecords">
       <EntityTypeMapping TypeName="CMDBasicModel.BTherapyRecord">
         <MappingFragment StoreEntitySet="BTherapyRecord">

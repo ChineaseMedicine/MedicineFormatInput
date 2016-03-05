@@ -50,6 +50,21 @@ namespace CMD.DAL
         public DbSet<ContentRecord> ContentRecords { get; set; }
         public DbSet<DrugReferenceDetailRecord> DrugReferenceDetailRecords { get; set; }
         public DbSet<DrugReferenceRecord> DrugReferenceRecords { get; set; }
+        public DbSet<MMainSourceRecord> MMainSourceRecords { get; set; }
+        public DbSet<MRelationAgeRecord> MRelationAgeRecords { get; set; }
+        public DbSet<MRelationDiseasePropertyRecord> MRelationDiseasePropertyRecords { get; set; }
+        public DbSet<MRelationDosageRecord> MRelationDosageRecords { get; set; }
+        public DbSet<MRelationDrugRecord> MRelationDrugRecords { get; set; }
+        public DbSet<MRelationDynastyRecord> MRelationDynastyRecords { get; set; }
+        public DbSet<MRelationEnvironmentRecord> MRelationEnvironmentRecords { get; set; }
+        public DbSet<MRelationFamousPrescriptionRecord> MRelationFamousPrescriptionRecords { get; set; }
+        public DbSet<MRelationPathogenesisRecord> MRelationPathogenesisRecords { get; set; }
+        public DbSet<MRelationPhysiqueRecord> MRelationPhysiqueRecords { get; set; }
+        public DbSet<MRelationSeasonRecord> MRelationSeasonRecords { get; set; }
+        public DbSet<MRelationSexRecord> MRelationSexRecords { get; set; }
+        public DbSet<MRelationSymptomRecord> MRelationSymptomRecords { get; set; }
+        public DbSet<MRelationSyndromesRecord> MRelationSyndromesRecords { get; set; }
+        public DbSet<MRelationTherapyRecord> MRelationTherapyRecords { get; set; }
         public DbSet<BTherapyRecord> BTherapyRecords { get; set; }
     }
 }

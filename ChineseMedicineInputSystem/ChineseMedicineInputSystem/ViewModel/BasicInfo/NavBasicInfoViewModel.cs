@@ -57,6 +57,10 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             {
                 ViewInjectionManager.Default.Navigate(Regions.Main, ModuleType.DrugTaste);
             }
+            else if (CurrentFolder.Folder == BasicInfoFolderName.Herbs)
+            {
+                ViewInjectionManager.Default.Navigate(Regions.Main, ModuleType.Herbs);
+            }
             else if (CurrentFolder.Folder == BasicInfoFolderName.DrugEffect)
             {
                 ViewInjectionManager.Default.Navigate(Regions.Main, ModuleType.DrugEffect);
@@ -120,7 +124,8 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             BasicInfoFolderViewModel mainFolder = BasicInfoFolderViewModel.Create("基础信息", FilePathHelper.GetAppImageUri("FoldersIcons/Customer"), BasicInfoFolderName.Root);
 
             BasicInfoFolderViewModel drugFolder = BasicInfoFolderViewModel.Create("药品", FilePathHelper.GetAppImageUri("FoldersIcons/IDE"), BasicInfoFolderName.Drug);
-            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药品性味", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugTaste));
+            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药性", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.Herbs));
+            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药味", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugTaste));
             drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药品功效", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffect));
             drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药品功效大类", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffectCategroy));
 

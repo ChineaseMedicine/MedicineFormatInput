@@ -191,7 +191,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         }
         private void LoadDurgTastes()
         {
-            DurgTasteHandler _drugTasteHandler = new DurgTasteHandler();
+            DrugTasteHandler _drugTasteHandler = new DrugTasteHandler();
             var records = _drugTasteHandler.LoadBDurgTasteRecords();
             var drugTasteBos = new List<DurgTasteBo>();
             foreach (var record in records)

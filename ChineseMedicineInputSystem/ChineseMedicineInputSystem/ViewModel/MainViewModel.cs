@@ -48,7 +48,7 @@ namespace ChineseMedicineInputSystem.ViewModel
         }
         public void OpenTasks()
         {
-            ViewInjectionManager.Default.Navigate(Regions.Navigation, ModuleType.Tasks);
+            ViewInjectionManager.Default.Navigate(Regions.Navigation, ModuleType.Metedata);
         }
         public void ShowAbout()
         {

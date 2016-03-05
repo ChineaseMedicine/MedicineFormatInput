@@ -11,7 +11,8 @@ namespace ChineseMedicineInputSystem.ViewModel
         Mail, Tasks, Calendar, Contacts, BasicInfo, Dynasty, Age,
         DrugTaste, DrugEffect, DrugEffectCategroy, Drug, Disease,
         DiseaseProperty, DiseaseCategory, Dosageforms, Prescription,
-        Area, Season, Environment, Sex, Symptom, Syndromes
+        Area, Season, Environment, Sex, Symptom, Syndromes, Herbs,
+        Metedata
     }
     public static class Regions
     {

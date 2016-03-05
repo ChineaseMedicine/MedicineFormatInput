@@ -17,7 +17,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         All, Announcements, ASP, WinForms, IDETools,
         Frameworks, Root, Dynasty, Age, DrugTaste, DrugEffect, DrugEffectCategroy, Drug,
         Disease, DiseaseCategory, DiseaseProperty, Dosageforms, Prescription, Area, Season,
-        Environment, Sex, Symptom, Syndromes
+        Environment, Sex, Symptom, Syndromes, Herbs
     };
 
     [POCOViewModel(ImplementIDataErrorInfo = true)]

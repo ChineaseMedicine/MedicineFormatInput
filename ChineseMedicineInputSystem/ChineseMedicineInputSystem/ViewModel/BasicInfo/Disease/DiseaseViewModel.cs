@@ -74,7 +74,7 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
        {
             DiseaseHandler handler = new DiseaseHandler();
             var ItemRecords = new List<DiseaseBo>();
-            var records = handler.LoadBAgeRecords();
+            var records = handler.LoadBos();
             foreach (var record in records)
             {
                 ItemRecords.Add(new DiseaseBo

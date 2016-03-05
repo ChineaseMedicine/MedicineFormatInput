@@ -97,6 +97,7 @@
     <Compile Include="ViewModel\BasicInfo\Disease\DiseaseViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Drug\DrugEffectCategroyViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Drug\DrugEffectViewModel.cs" />
+    <Compile Include="ViewModel\BasicInfo\Drug\DrugHerbsViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Drug\DrugTasteViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Drug\DrugViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Dynasty\DynastyViewModel.cs" />
@@ -109,11 +110,20 @@
     <Compile Include="ViewModel\BasicInfo\Symptom\SymptomViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Season\SeasonViewModel.cs" />
     <Compile Include="ViewModel\BasicInfo\Symptom\SyndromesViewModel.cs" />
+    <Compile Include="ViewModel\Metedata\MetedataItemViewModel.cs" />
+    <Compile Include="ViewModel\Metedata\MetedataViewModel.cs" />
+    <Compile Include="ViewModel\Metedata\NavMetedataViewModel.cs" />
     <Compile Include="View\BasicInfo\Area\AreaView.xaml.cs">
       <DependentUpon>AreaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BasicInfo\Area\CreateAreaView.xaml.cs">
       <DependentUpon>CreateAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\CreateDrugHerbsView.xaml.cs">
+      <DependentUpon>CreateDrugHerbsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BasicInfo\Drug\DrugHerbsView.xaml.cs">
+      <DependentUpon>DrugHerbsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BasicInfo\Environment\CreateEnvironmentView.xaml.cs">
       <DependentUpon>CreateEnvironmentView.xaml</DependentUpon>
@@ -222,6 +232,15 @@
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Metedata\CreateMetedataView.xaml.cs">
+      <DependentUpon>CreateMetedataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Metedata\MetedataView.xaml.cs">
+      <DependentUpon>MetedataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Metedata\NavMetedataView.xaml.cs">
+      <DependentUpon>NavMetedataView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -239,6 +258,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BasicInfo\Area\CreateAreaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\CreateDrugHerbsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BasicInfo\Drug\DrugHerbsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -379,6 +406,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Metedata\CreateMetedataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Metedata\MetedataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Metedata\NavMetedataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
