@@ -136,6 +136,7 @@ namespace CMD.DAL.DALs
                     UpdateBy = itemEntity.UpdateBy,
                     UpdateTime = itemEntity.UpdateTime,
                     CaseNumber = itemEntity.CaseNumber,
+
                 });
             }
 
