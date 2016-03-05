@@ -149,7 +149,7 @@ namespace CMD.DAL.DALs
             var mainSourceEntity = new MMainSourceRecord()
             {
                 Area = bo.AreaName.ToString(),
-                CaseNumber = 1,
+                CaseNumber = bo.CaseNumber,
                 CreateBy = bo.CreateBy,
                 CreateTime = bo.CreateTime,
                 DiseaseCategory = bo.DiseaseCategoryName.ToString(),
