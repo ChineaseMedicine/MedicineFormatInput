@@ -18,6 +18,7 @@ namespace CMD.DAL
         public long MainSourceId { get; set; }
         public long DrugId { get; set; }
         public string DrugName { get; set; }
+        public Nullable<int> Dose { get; set; }
         public string CreateBy { get; set; }
         public string UpdateBy { get; set; }
         public System.DateTime CreateTime { get; set; }

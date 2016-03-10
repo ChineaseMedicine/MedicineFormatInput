@@ -10,7 +10,7 @@
              xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
              xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
              xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
-             xmlns:view="clr-namespace:ChineseMedicineInputSystem.View.Metedata"
+             xmlns:view="clr-namespace:ChineseMedicineInputSystem.View"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
              xmlns:viewmodel="clr-namespace:ChineseMedicineInputSystem.ViewModel.Metedata"
              mc:Ignorable="d" d:DataContext="{dxmvvm:ViewModelSource viewmodel:MetedataItemViewModel}"

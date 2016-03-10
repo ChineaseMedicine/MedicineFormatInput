@@ -46,6 +46,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         public virtual List<object> SelectedDosageformses { get; set; }
         public virtual List<object> DrugNameList { get; set; }
         public virtual List<object> SelectedDrugNames { get; set; }
+        public virtual ObservableCollection<DrugBoInput> DrugBoInputs { get; set; }
         public virtual int CaseNumber { get; set; }
 
         public virtual MeteDataBo SelectedItem { get; set; }
@@ -83,6 +84,10 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
             CleanUp();
         }
 
+        public void AddDose()
+        {
+            this.GetService<IWindowService>().Show("bcdeView", this);
+        }
         private void CleanUp()
         {
             SelectedAge = null;
@@ -165,8 +170,9 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
             var drugEffectHandler = new DrugEffectHandler();
             var drugTasteHandler = new DrugTasteHandler();
             var drugHandler = new DrugHandler();
-            DrugNameList = drugHandler.LoadBDrugRecords().Select(o => o.Name as object).ToList();
+            DrugNameList = drugHandler.LoadBDrugRecords().Select(o => o as object).ToList();
             SelectedDrugNames = new List<object>();
+            DrugBoInputs = new ObservableCollection<DrugBoInput>();
 
             var dynastyHandler = new DynastyHandler();
             DynastyList = dynastyHandler.LoadBDynastyRecords().Select(o => o.Name as object).ToList();
@@ -201,5 +207,10 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         {
             this.GetService<IWindowService>().Show(this);
         }
+    }
+    public class DrugBoInput
+    {
+        public string DrugName { get; set; }
+        public int Dose { get; set; }
     }
 }

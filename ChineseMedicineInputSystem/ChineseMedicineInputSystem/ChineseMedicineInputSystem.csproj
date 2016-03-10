@@ -232,6 +232,9 @@
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Metedata\CreateMetedataDoseView.xaml.cs">
+      <DependentUpon>CreateMetedataDoseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Metedata\CreateMetedataView.xaml.cs">
       <DependentUpon>CreateMetedataView.xaml</DependentUpon>
     </Compile>
@@ -406,6 +409,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Metedata\CreateMetedataDoseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

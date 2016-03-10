@@ -366,6 +366,7 @@
     <Property Name="MainSourceId" Type="Int64" Nullable="false" />
     <Property Name="DrugId" Type="Int64" Nullable="false" />
     <Property Name="DrugName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dose" Type="Int32" />
     <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />

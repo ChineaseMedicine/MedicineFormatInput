@@ -391,6 +391,7 @@ warning 6002: The table/view 'CMDBasic.dbo.BTherapyRecord' does not have a prima
           <Property Name="MainSourceId" Type="bigint" Nullable="false" />
           <Property Name="DrugId" Type="bigint" Nullable="false" />
           <Property Name="DrugName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dose" Type="int" />
           <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
@@ -952,6 +953,7 @@ FROM [dbo].[BTherapyRecord] AS [BTherapyRecord]</DefiningQuery>
           <Property Name="MainSourceId" Type="Int64" Nullable="false" />
           <Property Name="DrugId" Type="Int64" Nullable="false" />
           <Property Name="DrugName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dose" Type="Int32" />
           <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -1550,6 +1552,7 @@ FROM [dbo].[BTherapyRecord] AS [BTherapyRecord]</DefiningQuery>
                 <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
                 <ScalarProperty Name="DrugId" ColumnName="DrugId" />
                 <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+                <ScalarProperty Name="Dose" ColumnName="Dose" />
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />

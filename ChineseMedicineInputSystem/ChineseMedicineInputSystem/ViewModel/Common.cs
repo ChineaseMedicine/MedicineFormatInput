@@ -74,7 +74,7 @@ namespace ChineseMedicineInputSystem.ViewModel
             ModuleType = moduleType;
             InitializeDataProvider();
             InitializeItems();
-            UpdateItemsSource();
+            //UpdateItemsSource();
             if (this.IsInDesignMode())
                 InitializeInDesignMode();
             else

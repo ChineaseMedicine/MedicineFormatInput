@@ -395,6 +395,7 @@
           <ScalarProperty Name="MainSourceId" ColumnName="MainSourceId" />
           <ScalarProperty Name="DrugId" ColumnName="DrugId" />
           <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
           <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
           <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
           <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ChineseMedicineInputSystem.View.Metedata.CreateMetedataView"
+﻿<UserControl x:Class="ChineseMedicineInputSystem.View.CreateMetedataView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6,17 +6,38 @@
              xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
              xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
              xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
              xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
              xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
              xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:view="clr-namespace:ChineseMedicineInputSystem.View"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
              xmlns:viewmodel="clr-namespace:ChineseMedicineInputSystem.ViewModel.Metedata"
              mc:Ignorable="d" d:DataContext="{dxmvvm:ViewModelSource viewmodel:MetedataItemViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-
+        <Style TargetType="{x:Type dxr:DXRibbonWindow}" x:Key="NewMessageWindowStyle">
+            <Setter Property="Height" Value="600"/>
+            <Setter Property="Width" Value="800"/>
+            <Setter Property="Icon" Value="/ChineseMedicineInputSystem;component/Images/AppIcon/AppIcon.ico"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+        </Style>
     </UserControl.Resources>
+    <dxmvvm:Interaction.Behaviors>
+        <!--<dxmvvm:WindowService Name="abcd"
+                              WindowType="{x:Type dxr:DXRibbonWindow}"
+                              Title="新建剂量据窗口"
+                              WindowStartupLocation="CenterScreen"
+                              WindowShowMode="Dialog"
+                              WindowStyle="{StaticResource NewMessageWindowStyle}">
+            <dxmvvm:WindowService.ViewTemplate>
+                <DataTemplate>
+                    <view:CreateMetedataDoseView/>
+                </DataTemplate>
+            </dxmvvm:WindowService.ViewTemplate>
+        </dxmvvm:WindowService>-->
+    </dxmvvm:Interaction.Behaviors>
     <dxb:BarManager>
         <Grid>
             <Grid.RowDefinitions>
@@ -219,8 +240,38 @@
                                 </dxe:ComboBoxEdit.StyleSettings>
                             </dxe:ComboBoxEdit>
                         </dxlc:LayoutItem>
-                        
+
                         <dxlc:LayoutItem Label="药品">
+                            <dxg:GridControl Name="grid" ItemsSource="{Binding DrugBoInputs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="150" Width="680">
+                                <dxg:GridControl.Columns>
+                                    <!--<dxg:GridColumn Name="序号" FieldName="Id" Header="序号" Width="50" MinWidth="30" />-->
+                                    <dxg:GridColumn Name="ColDrugName" FieldName="DrugName" Header="药品名" Width="100" >
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:ComboBoxEditSettings  
+                                                  ValidateOnTextInput="True"
+                                                  ValidateOnEnterKeyPressed="True"
+                                                  ItemsSource="{Binding DrugNameList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  ValueMember="Name" 
+	                                              DisplayMember="Name"
+                                                  AutoComplete ="True" 
+                                                  IncrementalFiltering="True" 
+                                                  ImmediatePopup="True">        
+                                            </dxe:ComboBoxEditSettings>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn Name="ColCount" FieldName="Dose" Header="药量" Width="100">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:SpinEditSettings MaskType="Numeric" MaskUseAsDisplayFormat="True" Mask="c" MaskCulture="en-US" />
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                </dxg:GridControl.Columns>
+                                <dxg:GridControl.View>
+                                    <dxg:TableView Name="view" AutoWidth="true" NewItemRowPosition="Bottom" ShowGroupedColumns="True" InitNewRow="view_InitNewRow" />
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+                        </dxlc:LayoutItem>
+
+                        <!--<dxlc:LayoutItem Label="药品">
                             <dxe:ComboBoxEdit x:Name="cbDrugNames"
                                       Margin="16,12,16,16"
                                       VerticalAlignment="Top"
@@ -236,6 +287,14 @@
                                 </dxe:ComboBoxEdit.StyleSettings>
                             </dxe:ComboBoxEdit>
                         </dxlc:LayoutItem>
+
+                        <dxlc:LayoutItem Label="添加药品剂量">
+                            <Button Content="添加剂量">
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxmvvm:EventToCommand EventName="Click" Command="{Binding AddDoseCommand}" PassEventArgsToCommand="True"/>
+                                </dxmvvm:Interaction.Behaviors>
+                            </Button>
+                        </dxlc:LayoutItem>-->
 
                         <dxlc:LayoutItem Label="案例数">
                             <dxe:TextEdit EditValue="{Binding CaseNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
