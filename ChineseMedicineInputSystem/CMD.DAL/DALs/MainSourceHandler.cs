@@ -123,7 +123,7 @@ namespace CMD.DAL.DALs
                     CreateTime = itemEntity.CreateTime,
                     DiseaseCategoryName = itemEntity.DiseaseCategory,
                     DiseaseName = itemEntity.DiseaseName,
-                    DiseasePropertyName = diseaseProperty.DiseasePropertyCategoryName,
+                    //DiseasePropertyName = diseaseProperty.DiseasePropertyCategoryName,
                     Dosageformses = dosageformses.Select(o => o.DosageName as object).ToList(),
                     DrugNames = drugs.Select(o => o.DrugName as object).ToList(),
                     DynastyName = dynasty.DynastyName,
@@ -176,19 +176,19 @@ namespace CMD.DAL.DALs
             cmd.MRelationAgeRecords.Add(relationAgeEntity);
             #endregion
             #region DiseaseProperty
-            string diseasePropertyName = bo.DiseaseCategoryName.ToString();
-            var bDiseasePropertyRecord = cmd.BDiseaseCategoryRecords.FirstOrDefault(o => o.Name == diseasePropertyName);
-            var relationDiseasePropertyCategory = new MRelationDiseasePropertyRecord()
-            {
-                DiseasePropertyCategoryId = bDiseasePropertyRecord.Id,
-                DiseasePropertyCategoryName = bDiseasePropertyRecord.Name,
-                MainSourceId = mainSourceEntity.MainSourceId,
-                CreateBy = mainSourceEntity.CreateBy,
-                CreateTime = mainSourceEntity.CreateTime,
-                UpdateBy = mainSourceEntity.UpdateBy,
-                UpdateTime = mainSourceEntity.UpdateTime,
-            };
-            cmd.MRelationDiseasePropertyRecords.Add(relationDiseasePropertyCategory);
+            //string diseasePropertyName = bo.DiseaseCategoryName.ToString();
+            //var bDiseasePropertyRecord = cmd.BDiseaseCategoryRecords.FirstOrDefault(o => o.Name == diseasePropertyName);
+            //var relationDiseasePropertyCategory = new MRelationDiseasePropertyRecord()
+            //{
+            //    DiseasePropertyCategoryId = bDiseasePropertyRecord.Id,
+            //    DiseasePropertyCategoryName = bDiseasePropertyRecord.Name,
+            //    MainSourceId = mainSourceEntity.MainSourceId,
+            //    CreateBy = mainSourceEntity.CreateBy,
+            //    CreateTime = mainSourceEntity.CreateTime,
+            //    UpdateBy = mainSourceEntity.UpdateBy,
+            //    UpdateTime = mainSourceEntity.UpdateTime,
+            //};
+            //cmd.MRelationDiseasePropertyRecords.Add(relationDiseasePropertyCategory);
             #endregion
             #region Dosageformses
             foreach (var item in bo.Dosageformses.Distinct())
@@ -211,8 +211,8 @@ namespace CMD.DAL.DALs
             #region DrugNames
             foreach (var item in bo.DrugNames.Distinct())
             {
-                string name = item.ToString();
-                var bDrugRecord = cmd.BDrugRecords.FirstOrDefault(o => o.Name == name);
+                var drugBoInput = item as DrugBoInput;
+                var bDrugRecord = cmd.BDrugRecords.FirstOrDefault(o => o.Name == drugBoInput.DrugName);
                 var relationDrugRecord = new MRelationDrugRecord()
                 {
                     DrugId = bDrugRecord.Id,
@@ -222,6 +222,7 @@ namespace CMD.DAL.DALs
                     CreateTime = mainSourceEntity.CreateTime,
                     UpdateBy = mainSourceEntity.UpdateBy,
                     UpdateTime = mainSourceEntity.UpdateTime,
+                    Dose = drugBoInput.Dose,
                 };
                 cmd.MRelationDrugRecords.Add(relationDrugRecord);
             }

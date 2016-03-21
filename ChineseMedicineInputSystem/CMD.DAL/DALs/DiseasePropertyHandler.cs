@@ -43,15 +43,30 @@ namespace CMD.DAL.DALs
             return cmd.BDiseasePropertyRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBAgeRecord(long id)
+        public bool DeleteBAgeRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BDiseasePropertyRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BDiseasePropertyRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationDiseasePropertyRecords.FirstOrDefault(o => o.DiseasePropertyCategoryName == record.Name);
+                if (null == mRecord)
+                {
+                    cmd.BDiseasePropertyRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

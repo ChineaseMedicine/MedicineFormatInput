@@ -68,8 +68,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void DeleteDrug()
         {
             DrugHandler handler = new DrugHandler();
-            handler.DeleteBDrugRecord(CurrentSelectedBo.Id);
-            ItemsSource.Remove(CurrentSelectedBo);
+            if (!handler.DeleteBDrugRecord(CurrentSelectedBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedBo);
+            }
         }
 
         public void RefreshItemSource()

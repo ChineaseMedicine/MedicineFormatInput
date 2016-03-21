@@ -61,8 +61,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void Delete()
         {
             var handler = new SyndromesHandler();
-            handler.DeleteRecord(CurrentSelectedBo.Id);
-            ItemsSource.Remove(CurrentSelectedBo);
+            if (!handler.DeleteRecord(CurrentSelectedBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedBo);
+            }
         }
 
         public void RefreshItemSource()

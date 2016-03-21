@@ -47,8 +47,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void Delete()
         {
             DynastyHandler handler = new DynastyHandler();
-            handler.DeleteBDynastyRecord(CurrentSelectedDynastyBo.Id);
-            ItemsSource.Remove(CurrentSelectedDynastyBo);
+            if (!handler.DeleteBDynastyRecord(CurrentSelectedDynastyBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedDynastyBo);
+            }
         }
 
         private void RefreshData()

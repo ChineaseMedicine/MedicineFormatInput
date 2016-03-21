@@ -62,8 +62,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void DeleteAge()
         {
             AgeHandler handler = new AgeHandler();
-            handler.DeleteBAgeRecord(CurrentSelectedAgeBo.Id);
-            ItemsSource.Remove(CurrentSelectedAgeBo);
+            if (!handler.DeleteBAgeRecord(CurrentSelectedAgeBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedAgeBo);
+            }
         }
 
         public void RefreshItemSource()

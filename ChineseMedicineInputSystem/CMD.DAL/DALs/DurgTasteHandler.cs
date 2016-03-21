@@ -40,8 +40,9 @@ namespace CMD.DAL.DALs
             return cmd.BDurgTasteRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBDurgTasteRecord(long id)
+        public bool DeleteBDurgTasteRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BDurgTasteRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
@@ -49,6 +50,11 @@ namespace CMD.DAL.DALs
                 cmd.BDurgTasteRecords.Remove(record);
                 cmd.SaveChanges();
             }
+            else
+            {
+                result = false;
+            }
+            return result;
         }
     }
 }

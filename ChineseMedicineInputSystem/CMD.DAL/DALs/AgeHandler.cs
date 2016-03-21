@@ -42,15 +42,31 @@ namespace CMD.DAL.DALs
             return cmd.BAgeRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBAgeRecord(long id)
+        public bool DeleteBAgeRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BAgeRecords.FirstOrDefault(o => o.Id == id);
+
             if (null != record)
             {
-                cmd.BAgeRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationAgeRecords.FirstOrDefault(o => o.AgeId == record.Id);
+                if (null == mRecord)
+                {
+                    cmd.BAgeRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

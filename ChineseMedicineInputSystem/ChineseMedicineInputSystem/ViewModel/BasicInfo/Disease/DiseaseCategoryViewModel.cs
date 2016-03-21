@@ -61,8 +61,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void DeleteDiseaseCategory()
         {
             DiseaseCategoryHandler handler = new DiseaseCategoryHandler();
-            handler.DeleteBAgeRecord(CurrentSelectedDiseaseCategoryBo.Id);
-            ItemsSource.Remove(CurrentSelectedDiseaseCategoryBo);
+            if (!handler.DeleteBAgeRecord(CurrentSelectedDiseaseCategoryBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedDiseaseCategoryBo);
+            }
         }
 
         public void RefreshItemSource()

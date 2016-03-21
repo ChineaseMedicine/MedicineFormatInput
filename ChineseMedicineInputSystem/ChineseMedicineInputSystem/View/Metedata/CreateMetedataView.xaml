@@ -101,7 +101,7 @@
                             </dxe:ComboBoxEdit>
                         </dxlc:LayoutItem>
                         
-                        <dxlc:LayoutItem Label="疾病属性">
+                        <!--<dxlc:LayoutItem Label="疾病属性">
                             <dxe:ComboBoxEdit Margin="16,12,16,16" x:Name="cbDiseaseProperty" Grid.Row="0"
                                     ShowSizeGrip="False" SelectedIndex="0" ShowCustomItems="True"
                                     IncrementalFiltering="True" ImmediatePopup="True"
@@ -111,7 +111,7 @@
                                     <dxe:ComboBoxStyleSettings />
                                 </dxe:ComboBoxEdit.StyleSettings>
                             </dxe:ComboBoxEdit>
-                        </dxlc:LayoutItem>
+                        </dxlc:LayoutItem>-->
                         
                         <dxlc:LayoutItem Label="地域">
                             <dxe:ComboBoxEdit Margin="16,12,16,16" x:Name="cbArea" Grid.Row="0"
@@ -241,27 +241,27 @@
                             </dxe:ComboBoxEdit>
                         </dxlc:LayoutItem>
 
-                        <dxlc:LayoutItem Label="药品">
+                        <dxlc:LayoutItem Label="药物">
                             <dxg:GridControl Name="grid" ItemsSource="{Binding DrugBoInputs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="150" Width="680">
                                 <dxg:GridControl.Columns>
                                     <!--<dxg:GridColumn Name="序号" FieldName="Id" Header="序号" Width="50" MinWidth="30" />-->
-                                    <dxg:GridColumn Name="ColDrugName" FieldName="DrugName" Header="药品名" Width="100" >
+                                    <dxg:GridColumn Name="ColDrugName" FieldName="DrugName" Header="药物名" Width="100" >
                                         <dxg:GridColumn.EditSettings>
-                                            <dxe:ComboBoxEditSettings  
+                                            <dxe:ComboBoxEditSettings 
                                                   ValidateOnTextInput="True"
                                                   ValidateOnEnterKeyPressed="True"
                                                   ItemsSource="{Binding DrugNameList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                   ValueMember="Name" 
 	                                              DisplayMember="Name"
                                                   AutoComplete ="True" 
-                                                  IncrementalFiltering="True" 
+                                                  IncrementalFiltering="True"
                                                   ImmediatePopup="True">        
                                             </dxe:ComboBoxEditSettings>
                                         </dxg:GridColumn.EditSettings>
                                     </dxg:GridColumn>
                                     <dxg:GridColumn Name="ColCount" FieldName="Dose" Header="药量" Width="100">
                                         <dxg:GridColumn.EditSettings>
-                                            <dxe:SpinEditSettings MaskType="Numeric" MaskUseAsDisplayFormat="True" Mask="c" MaskCulture="en-US" />
+                                            <dxe:SpinEditSettings MaskType="Numeric" Mask="d" />
                                         </dxg:GridColumn.EditSettings>
                                     </dxg:GridColumn>
                                 </dxg:GridControl.Columns>

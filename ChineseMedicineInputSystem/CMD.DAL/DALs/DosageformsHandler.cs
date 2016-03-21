@@ -50,15 +50,30 @@ namespace CMD.DAL.DALs
                    }).ToList();
         }
 
-        public override void DeleteRecord(long id)
+        public override bool DeleteRecord(long id)
         {
+            bool result = true;
             var cmd = new CMDBasicEntities();
             var record = cmd.BDosageFormsRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BDosageFormsRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationDosageRecords.FirstOrDefault(o => o.DosageName == record.Name);
+                if (null == mRecord)
+                {
+                    cmd.BDosageFormsRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

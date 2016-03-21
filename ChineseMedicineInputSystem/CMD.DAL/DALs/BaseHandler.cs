@@ -11,6 +11,6 @@ namespace CMD.DAL.DALs
 
         public abstract List<TBo> LoadBos();
 
-        public abstract void DeleteRecord(long id);
+        public abstract bool DeleteRecord(long id);
     }
 }

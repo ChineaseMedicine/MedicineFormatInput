@@ -92,7 +92,7 @@
                         <dxg:GridColumn FieldName="DosageformsNameString" Header="剂型" Width="90"/>
                         <dxg:GridColumn FieldName="PrescriptionNameString" Header="方剂" Width="90"/>
                         <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90"/>
-                        <dxg:GridColumn FieldName="DrugNameString" Header="药品" Width="90"/>
+                        <dxg:GridColumn FieldName="DrugNameString" Header="药物" Width="90"/>
                         <dxg:GridColumn FieldName="SymptomNameString" Header="症状" Width="90"/>
                         <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90"/>
                         <dxg:GridColumn FieldName="DynastyName" Header="朝代" Width="90"/>

@@ -43,8 +43,9 @@ namespace CMD.DAL.DALs
             return cmd.BDrugEffectCategroyRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBAgeRecord(long id)
+        public bool DeleteBAgeRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BDrugEffectCategroyRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
@@ -52,6 +53,12 @@ namespace CMD.DAL.DALs
                 cmd.BDrugEffectCategroyRecords.Remove(record);
                 cmd.SaveChanges();
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

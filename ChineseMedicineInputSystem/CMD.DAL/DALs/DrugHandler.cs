@@ -43,15 +43,30 @@ namespace CMD.DAL.DALs
             return cmd.BDrugRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBDrugRecord(long id)
+        public bool DeleteBDrugRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BDrugRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BDrugRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationDrugRecords.FirstOrDefault(o => o.DrugName == record.Name);
+                if (null == mRecord)
+                {
+                    cmd.BDrugRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

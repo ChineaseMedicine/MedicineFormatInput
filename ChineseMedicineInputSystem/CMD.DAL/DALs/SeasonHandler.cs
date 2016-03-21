@@ -52,15 +52,30 @@ namespace CMD.DAL.DALs
                     }).ToList();
         }
 
-        public override void DeleteRecord(long id)
+        public override bool DeleteRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BSeasonRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BSeasonRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationSeasonRecords.FirstOrDefault(o => o.SeasonName == record.Name);
+                if (null == mRecord)
+                {
+                    cmd.BSeasonRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Models\AgeBo.cs" />
     <Compile Include="Models\AreaBo.cs" />
     <Compile Include="Models\BaseBo.cs" />
+    <Compile Include="Models\DrugBoInput.cs" />
     <Compile Include="Models\DiseaseBo.cs" />
     <Compile Include="Models\DiseaseCategoryBo.cs" />
     <Compile Include="Models\DiseasePropertyBo.cs" />

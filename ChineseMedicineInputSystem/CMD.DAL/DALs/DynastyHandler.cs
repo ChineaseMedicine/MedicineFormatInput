@@ -44,15 +44,30 @@ namespace CMD.DAL.DALs
             return cmd.BDynastyRecords.Where(o => 1 == 1).ToList();
         }
 
-        public void DeleteBDynastyRecord(long id)
+        public bool DeleteBDynastyRecord(long id)
         {
+            bool result = true;
             CMDBasicEntities cmd = new CMDBasicEntities();
             var record = cmd.BDynastyRecords.FirstOrDefault(o => o.Id == id);
             if (null != record)
             {
-                cmd.BDynastyRecords.Remove(record);
-                cmd.SaveChanges();
+                var mRecord = cmd.MRelationDynastyRecords.FirstOrDefault(o => o.DynastyName == record.Name);
+                if (null == mRecord)
+                {
+                    cmd.BDynastyRecords.Remove(record);
+                    cmd.SaveChanges();
+                }
+                else
+                {
+                    result = false;
+                }
             }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

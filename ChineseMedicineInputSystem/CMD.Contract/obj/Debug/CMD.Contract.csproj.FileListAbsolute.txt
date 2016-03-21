@@ -7,4 +7,3 @@ E:\lxx\GitHub\MedicineFormatInput\ChineseMedicineInputSystem\CMD.Contract\bin\De
 E:\lxx\GitHub\MedicineFormatInput\ChineseMedicineInputSystem\CMD.Contract\bin\Debug\CMD.Contract.pdb
 E:\lxx\GitHub\MedicineFormatInput\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.dll
 E:\lxx\GitHub\MedicineFormatInput\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.pdb
-E:\lxx\GitHub\MedicineFormatInput\ChineseMedicineInputSystem\CMD.Contract\obj\Debug\CMD.Contract.csprojResolveAssemblyReference.cache

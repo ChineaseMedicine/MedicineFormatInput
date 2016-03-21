@@ -61,8 +61,14 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
         public void DeleteDurgTast()
         {
             DrugEffectHandler handler = new DrugEffectHandler();
-            handler.DeleteBDrugEffectRecord(CurrentSelectedBo.Id);
-            ItemsSource.Remove(CurrentSelectedBo);
+            if (!handler.DeleteBDrugEffectRecord(CurrentSelectedBo.Id))
+            {
+                this.GetService<INotificationService>().CreatePredefinedNotification("Delete Result.", "删除失败，已经被应用于元数据", "").ShowAsync();
+            }
+            else
+            {
+                ItemsSource.Remove(CurrentSelectedBo);
+            }
         }
 
         public void RefreshItemSource()

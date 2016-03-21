@@ -123,15 +123,15 @@ namespace ChineseMedicineInputSystem.ViewModel.BasicInfo
             Folders = new List<IBasicInfoFolderDescription>();
             BasicInfoFolderViewModel mainFolder = BasicInfoFolderViewModel.Create("基础信息", FilePathHelper.GetAppImageUri("FoldersIcons/Customer"), BasicInfoFolderName.Root);
 
-            BasicInfoFolderViewModel drugFolder = BasicInfoFolderViewModel.Create("药品", FilePathHelper.GetAppImageUri("FoldersIcons/IDE"), BasicInfoFolderName.Drug);
+            BasicInfoFolderViewModel drugFolder = BasicInfoFolderViewModel.Create("药物", FilePathHelper.GetAppImageUri("FoldersIcons/IDE"), BasicInfoFolderName.Drug);
             drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药性", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.Herbs));
             drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药味", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugTaste));
-            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药品功效", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffect));
-            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药品功效大类", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffectCategroy));
+            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药物功效", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffect));
+            drugFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("药物功效大类", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DrugEffectCategroy));
 
             BasicInfoFolderViewModel diseaseFolder = BasicInfoFolderViewModel.Create("疾病", FilePathHelper.GetAppImageUri("FoldersIcons/IDE"), BasicInfoFolderName.Disease);
             diseaseFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("疾病大类", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DiseaseCategory));
-            diseaseFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("疾病属性", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DiseaseProperty));
+            //diseaseFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("疾病属性", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.DiseaseProperty));
             
             BasicInfoFolderViewModel symptomFolder = BasicInfoFolderViewModel.Create("症状", FilePathHelper.GetAppImageUri("FoldersIcons/IDE"), BasicInfoFolderName.Symptom);
             symptomFolder.SubFolders.Add(BasicInfoFolderViewModel.Create("证型", FilePathHelper.GetAppImageUri("FoldersIcons/Frameworks"), BasicInfoFolderName.Syndromes));

@@ -54,7 +54,13 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
         public void SaveNew()
         {
+            if (!CheckEmpty())
+            {
+                return;
+            }
             var handler = new MainSourceHandler();
+
+            SelectedDrugNames = DrugBoInputs.Distinct().Select(o => o as object).ToList();
 
             handler.SaveRecord(new MeteDataBo()
             {
@@ -67,10 +73,10 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
                 EnvironmentName = SelectedEnvironment,
                 AgeName = SelectedAge,
                 SexName = SelectedSex,
-                Symptoms = SelectedSymptoms,
-                Syndromes = SelectedSyndromes,
-                Prescriptions = SelectedPrescriptions,
-                Dosageformses = SelectedDosageformses,
+                Symptoms = SelectedSymptoms.Distinct().ToList(),
+                Syndromes = SelectedSyndromes.Distinct().ToList(),
+                Prescriptions = SelectedPrescriptions.Distinct().ToList(),
+                Dosageformses = SelectedDosageformses.Distinct().ToList(),
                 DrugNames = SelectedDrugNames,
                 CaseNumber = CaseNumber,
                 CreateBy = ConfigurationManager.AppSettings["UserId"],
@@ -84,6 +90,100 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
             CleanUp();
         }
 
+        private bool CheckEmpty()
+        {
+            if (SelectedAge == null)
+            {
+                this.GetService<INotificationService>()
+                    .CreatePredefinedNotification("Query Result.", "年龄层次不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedArea == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "地域不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedDiseaseCategory == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "疾病大类不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedDiseaseName == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "疾病名不能为空", "").ShowAsync();
+                return false;
+            }
+            //if (SelectedDiseasePropertyName == null)
+            //{
+            //    this.GetService<INotificationService>()
+            //       .CreatePredefinedNotification("Query Result.", "年龄层次不能为空", "").ShowAsync();
+            //    return false;
+            //}
+            if (SelectedDosageformses == null || SelectedDosageformses.Count <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "剂型不能为空", "").ShowAsync();
+                return false;
+            }
+            if (DrugBoInputs == null || DrugBoInputs.Count <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "药品名不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedDynasty == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "朝代不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedEnvironment == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "环境不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedPrescriptions == null || SelectedPrescriptions.Count <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "处方不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedSeason == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "季节不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedSex == null)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "性别不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedSymptoms == null || SelectedSymptoms.Count <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "症状不能为空", "").ShowAsync();
+                return false;
+            }
+            if (SelectedSyndromes == null || SelectedSyndromes.Count <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "证型不能为空", "").ShowAsync();
+                return false;
+            }
+            if (CaseNumber <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "病例数不能为空", "").ShowAsync();
+                return false;
+            }
+            return true;
+        }
         public void AddDose()
         {
             this.GetService<IWindowService>().Show("bcdeView", this);
@@ -207,10 +307,5 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         {
             this.GetService<IWindowService>().Show(this);
         }
-    }
-    public class DrugBoInput
-    {
-        public string DrugName { get; set; }
-        public int Dose { get; set; }
     }
 }
