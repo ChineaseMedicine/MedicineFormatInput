@@ -17,7 +17,8 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         {
             return ViewModelSource.Create(() => new MetedataViewModel());
         }
-
+        public virtual string TitleName { get; set; }
+        private bool IsCreateMode = true;
         public virtual List<object> DiseaseCategoryList { get; set; }
         public virtual object SelectedDiseaseCategory { get; set; }
         public virtual List<object> DynastyList { get; set; }
@@ -59,11 +60,15 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
                 return;
             }
             var handler = new MainSourceHandler();
-
+            if (!IsCreateMode)
+            {
+                handler.DeleteRecord(Convert.ToInt64(SelectedItem.Id), false);
+            }
             SelectedDrugNames = DrugBoInputs.Distinct().Select(o => o as object).ToList();
 
             handler.SaveRecord(new MeteDataBo()
             {
+                Id = SelectedItem == null ? 0 : SelectedItem.Id,
                 DiseaseCategoryName = SelectedDiseaseCategory,
                 DynastyName = SelectedDynasty,
                 DiseaseName = SelectedDiseaseName,
@@ -209,14 +214,30 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
         public void CreateNew()
         {
+            TitleName = "新建元数据窗口";
+            IsCreateMode = true;
             LoadData();
             ShowMessageWindow();
+        }
+
+        public void Edit()
+        {
+            if (SelectedItem == null && Convert.ToInt64(SelectedItem.Id) > 0)
+            {
+                return;
+            }
+            TitleName = "修改元数据窗口";
+            IsCreateMode = false;
+            LoadData();
+            SetData();
+            ShowMessageWindow();
+            RefreshItemSource();
         }
 
         public void Delete()
         {
             var handler = new MainSourceHandler();
-            handler.DeleteRecord(Convert.ToInt64(SelectedItem.Id));
+            handler.DeleteRecord(Convert.ToInt64(SelectedItem.Id), true);
 
             ItemsSource.Remove(SelectedItem);
         }
@@ -239,7 +260,24 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
             ItemsSource = new ObservableCollection<MeteDataBo>(bos);
         }
-
+        private void SetData()
+        {
+            SelectedAge = SelectedItem.AgeName;
+            SelectedArea = SelectedItem.AreaName;
+            SelectedDiseaseCategory = SelectedItem.DiseaseCategoryName;
+            SelectedDiseaseName = SelectedItem.DiseaseName;
+            SelectedDiseasePropertyName = SelectedItem.DiseasePropertyName;
+            SelectedDosageformses = SelectedItem.Dosageformses;
+            DrugBoInputs = new ObservableCollection<DrugBoInput>(SelectedItem.DrugNames.Cast<DrugBoInput>());
+            SelectedDynasty = SelectedItem.DynastyName;
+            SelectedEnvironment = SelectedItem.EnvironmentName;
+            SelectedPrescriptions = SelectedItem.Prescriptions;
+            SelectedSeason = SelectedItem.SeasonName;
+            SelectedSex = SelectedItem.SexName;
+            SelectedSymptoms = SelectedItem.Symptoms;
+            SelectedSyndromes = SelectedItem.Syndromes;
+            CaseNumber = SelectedItem.CaseNumber;
+        }
         private void LoadData()
         {
             var ageHandler = new AgeHandler();

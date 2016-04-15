@@ -69,6 +69,8 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -234,6 +236,9 @@
     </Compile>
     <Compile Include="View\Metedata\CreateMetedataDoseView.xaml.cs">
       <DependentUpon>CreateMetedataDoseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Metedata\ModifyMetedataView.xaml.cs">
+      <DependentUpon>ModifyMetedataView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Metedata\CreateMetedataView.xaml.cs">
       <DependentUpon>CreateMetedataView.xaml</DependentUpon>
@@ -415,6 +420,10 @@
     <Page Include="View\Metedata\CreateMetedataDoseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Metedata\ModifyMetedataView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Metedata\CreateMetedataView.xaml">
       <SubType>Designer</SubType>

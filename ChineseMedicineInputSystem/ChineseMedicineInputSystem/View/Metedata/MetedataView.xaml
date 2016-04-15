@@ -37,8 +37,8 @@
     <dxmvvm:Interaction.Behaviors>
         <dxmvvm:NotificationService UseWin8NotificationsIfAvailable="False"
                                     PredefinedNotificationTemplate="ShortHeaderAndLongText"/>
-        <dxmvvm:WindowService WindowType="{x:Type dxr:DXRibbonWindow}"
-                              Title="新建元数据窗口"
+        <dxmvvm:WindowService Name="CreateView" WindowType="{x:Type dxr:DXRibbonWindow}"
+                              Title="元数据"
                               WindowStartupLocation="CenterScreen"
                               WindowShowMode="Dialog"
                               WindowStyle="{StaticResource NewMessageWindowStyle}">
