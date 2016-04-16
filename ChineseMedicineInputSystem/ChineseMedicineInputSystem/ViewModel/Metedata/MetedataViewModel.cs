@@ -49,6 +49,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         public virtual List<object> SelectedDrugNames { get; set; }
         public virtual ObservableCollection<DrugBoInput> DrugBoInputs { get; set; }
         public virtual int CaseNumber { get; set; }
+        public virtual long SelectedLineNumber { get; set; }
 
         public virtual MeteDataBo SelectedItem { get; set; }
         protected MetedataViewModel() : base(ModuleType.Metedata) { }
@@ -68,6 +69,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
             handler.SaveRecord(new MeteDataBo()
             {
+                LineNumber = SelectedLineNumber,
                 Id = SelectedItem == null ? 0 : SelectedItem.Id,
                 DiseaseCategoryName = SelectedDiseaseCategory,
                 DynastyName = SelectedDynasty,
@@ -187,6 +189,25 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
                    .CreatePredefinedNotification("Query Result.", "病例数不能为空", "").ShowAsync();
                 return false;
             }
+
+            if (SelectedLineNumber <= 0)
+            {
+                this.GetService<INotificationService>()
+                   .CreatePredefinedNotification("Query Result.", "Excel行号不能为空", "").ShowAsync();
+                return false;
+            }
+
+            if (IsCreateMode)
+            {
+                MainSourceHandler handler = new MainSourceHandler();
+                if (handler.CheckDuplicateExcelRowNumber(SelectedLineNumber))
+                {
+                    this.GetService<INotificationService>()
+                      .CreatePredefinedNotification("Query Result.", "Excel行号不能重复", "").ShowAsync();
+                    return false;
+                }
+            }
+           
             return true;
         }
         public void AddDose()
@@ -277,6 +298,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
             SelectedSymptoms = SelectedItem.Symptoms;
             SelectedSyndromes = SelectedItem.Syndromes;
             CaseNumber = SelectedItem.CaseNumber;
+            SelectedLineNumber = SelectedItem.LineNumber;
         }
         private void LoadData()
         {

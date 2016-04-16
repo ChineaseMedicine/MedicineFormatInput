@@ -6,6 +6,7 @@ namespace CMD.Contract.Models
     public class MeteDataBo
     {
         public virtual object Id { get; set; }
+        public virtual long LineNumber { get; set; }
         public virtual object DiseaseCategoryName { get; set; }
         public virtual object DynastyName { get; set; }
         public virtual object DiseaseName { get; set; }

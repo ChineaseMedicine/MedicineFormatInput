@@ -87,24 +87,25 @@
                     </dxmvvm:Interaction.Behaviors>
                     <dxg:GridControl.Columns>
                         <dxg:GridColumn FieldName="Id" Header="序号"/>
-                        <dxg:GridColumn FieldName="DiseaseCategoryName" Header="疾病大类" Width="90"/>
-                        <dxg:GridColumn FieldName="DiseaseName" Header="疾病" Width="90"/>
-                        <dxg:GridColumn FieldName="DosageformsNameString" Header="剂型" Width="90"/>
-                        <dxg:GridColumn FieldName="PrescriptionNameString" Header="方剂" Width="90"/>
-                        <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90"/>
-                        <dxg:GridColumn FieldName="DrugNameString" Header="药物" Width="90"/>
-                        <dxg:GridColumn FieldName="SymptomNameString" Header="症状" Width="90"/>
-                        <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90"/>
-                        <dxg:GridColumn FieldName="DynastyName" Header="朝代" Width="90"/>
-                        <dxg:GridColumn FieldName="SexName" Header="性别" Width="90"/>
-                        <dxg:GridColumn FieldName="AgeName" Header="年龄层次" Width="90"/>
-                        <dxg:GridColumn FieldName="AreaName" Header="地域" Width="90"/>
-                        <dxg:GridColumn FieldName="SeasonName" Header="季节" Width="90"/>
-                        <dxg:GridColumn FieldName="EnvironmentName" Header="环境" Width="90"/>
+                        <dxg:GridColumn FieldName="LineNumber" Header="Excel行号" VisibleIndex="1"/>
+                        <dxg:GridColumn FieldName="DiseaseCategoryName" Header="疾病大类" Width="90" VisibleIndex="1"/>
+                        <dxg:GridColumn FieldName="DiseaseName" Header="疾病" Width="90" VisibleIndex="2"/>
+                        <dxg:GridColumn FieldName="DosageformsNameString" Header="剂型" Width="90" VisibleIndex="3"/>
+                        <dxg:GridColumn FieldName="PrescriptionNameString" Header="方剂" Width="90" VisibleIndex="4"/>
+                        <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90" VisibleIndex="5"/>
+                        <dxg:GridColumn FieldName="DrugNameString" Header="药物" Width="90" VisibleIndex="6"/>
+                        <dxg:GridColumn FieldName="SymptomNameString" Header="症状" Width="90" VisibleIndex="7"/>
+                        <dxg:GridColumn FieldName="SyndromesNameString" Header="证型" Width="90" VisibleIndex="8"/>
+                        <dxg:GridColumn FieldName="DynastyName" Header="朝代" Width="90" VisibleIndex="9"/>
+                        <dxg:GridColumn FieldName="SexName" Header="性别" Width="90" VisibleIndex="10"/>
+                        <dxg:GridColumn FieldName="AgeName" Header="年龄层次" Width="90" VisibleIndex="11"/>
+                        <dxg:GridColumn FieldName="AreaName" Header="地域" Width="90" VisibleIndex="12"/>
+                        <dxg:GridColumn FieldName="SeasonName" Header="季节" Width="90" VisibleIndex="13"/>
+                        <dxg:GridColumn FieldName="EnvironmentName" Header="环境" Width="90" VisibleIndex="14"/>
                         <!--<dxg:GridColumn FieldName="CreateBy" Header="创建人" Width="85" />
                         <dxg:GridColumn FieldName="CreateTime" Header="创建日期" Width="85" />-->
-                        <dxg:GridColumn FieldName="UpdateBy" Header="最后修改人" Width="85" />
-                        <dxg:GridColumn FieldName="UpdateTime" Header="最后修改时间" Width="85" />
+                        <dxg:GridColumn FieldName="UpdateBy" Header="最后修改人" Width="85" VisibleIndex="15" />
+                        <dxg:GridColumn FieldName="UpdateTime" Header="最后修改时间" Width="85" VisibleIndex="16" />
                     </dxg:GridControl.Columns>
                     <dxg:GridControl.GroupSummary>
                         <dxg:GridSummaryItem SummaryType="Count"/>

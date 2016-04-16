@@ -65,6 +65,11 @@
                 </dxmvvm:Interaction.Behaviors>
                 <Grid>
                     <dxlc:LayoutControl Orientation="Vertical" VerticalAlignment="Top">
+
+                        <dxlc:LayoutItem Label="Excel行号">
+                            <dxe:TextEdit EditValue="{Binding SelectedLineNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </dxlc:LayoutItem>
+
                         <dxlc:LayoutItem Label="类型">
                             <dxe:ComboBoxEdit Margin="16,12,16,16" x:Name="cdDiseaseCategory" Grid.Row="0"
                                     ShowSizeGrip="False" SelectedIndex="0" ShowCustomItems="True"

@@ -343,6 +343,7 @@
           <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
           <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
           <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

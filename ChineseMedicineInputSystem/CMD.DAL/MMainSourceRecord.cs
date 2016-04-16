@@ -23,5 +23,6 @@ namespace CMD.DAL
         public string UpdateBy { get; set; }
         public System.DateTime CreateTime { get; set; }
         public System.DateTime UpdateTime { get; set; }
+        public long LineNumber { get; set; }
     }
 }

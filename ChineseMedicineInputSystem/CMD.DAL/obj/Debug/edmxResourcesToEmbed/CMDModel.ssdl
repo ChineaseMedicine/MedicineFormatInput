@@ -338,6 +338,7 @@ warning 6002: The table/view 'CMDBasic.dbo.BTherapyRecord' does not have a prima
     <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CreateTime" Type="datetime" Nullable="false" />
     <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="LineNumber" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="MRelationAgeRecord">
     <Key>

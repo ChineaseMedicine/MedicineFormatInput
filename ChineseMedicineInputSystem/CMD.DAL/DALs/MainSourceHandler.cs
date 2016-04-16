@@ -8,7 +8,7 @@ namespace CMD.DAL.DALs
 {
     public class MainSourceHandler
     {
-        public void DeleteRecord(long id)
+        public void DeleteRecord(long id, bool needRemoveMainRecord)
         {
             var cmd = new CMDBasicEntities();
             var mainSourceEntity = cmd.MMainSourceRecords.FirstOrDefault(o => o.MainSourceId == id);
@@ -84,7 +84,10 @@ namespace CMD.DAL.DALs
                 cmd.MRelationSeasonRecords.Remove(item);
             }
 
-            cmd.MMainSourceRecords.Remove(mainSourceEntity);
+            if (needRemoveMainRecord)
+            {
+                cmd.MMainSourceRecords.Remove(mainSourceEntity);
+            }
 
             cmd.SaveChanges();
         }
@@ -92,6 +95,18 @@ namespace CMD.DAL.DALs
         public bool DuplicateQuery(string name)
         {
             throw new NotImplementedException();
+        }
+
+        public bool CheckDuplicateExcelRowNumber(long lineNumber)
+        {
+            var result = true;
+            var cmd = new CMDBasicEntities();
+            var record = cmd.MMainSourceRecords.FirstOrDefault(o => o.LineNumber == lineNumber);
+            if (record == null)
+            {
+                result = false;
+            }
+            return result;
         }
 
         public List<MeteDataBo> LoadBos()
@@ -125,7 +140,7 @@ namespace CMD.DAL.DALs
                     DiseaseName = itemEntity.DiseaseName,
                     //DiseasePropertyName = diseaseProperty.DiseasePropertyCategoryName,
                     Dosageformses = dosageformses.Select(o => o.DosageName as object).ToList(),
-                    DrugNames = drugs.Select(o => o.DrugName as object).ToList(),
+                    DrugNames = drugs.Select(o => new DrugBoInput { DrugName = o.DrugName, Dose = o.Dose ?? 0 } as object).ToList(),
                     DynastyName = dynasty.DynastyName,
                     EnvironmentName = null == season ? string.Empty : environment.EnvironmentName,
                     Prescriptions = prescriptions.Select(o => o.FamousPrescriptionName as object).ToList(),
@@ -136,7 +151,7 @@ namespace CMD.DAL.DALs
                     UpdateBy = itemEntity.UpdateBy,
                     UpdateTime = itemEntity.UpdateTime,
                     CaseNumber = itemEntity.CaseNumber,
-
+                    LineNumber = itemEntity.LineNumber,
                 });
             }
 
@@ -146,18 +161,42 @@ namespace CMD.DAL.DALs
         public void SaveRecord(MeteDataBo bo)
         {
             var cmd = new CMDBasicEntities();
-            var mainSourceEntity = new MMainSourceRecord()
+            MMainSourceRecord mainSourceEntity = null;
+            if (Convert.ToInt64(bo.Id) > 0)
             {
-                Area = bo.AreaName.ToString(),
-                CaseNumber = bo.CaseNumber,
-                CreateBy = bo.CreateBy,
-                CreateTime = bo.CreateTime,
-                DiseaseCategory = bo.DiseaseCategoryName.ToString(),
-                DiseaseName = bo.DiseaseName.ToString(),
-                UpdateBy = bo.UpdateBy,
-                UpdateTime = bo.UpdateTime,
-            };
-            cmd.MMainSourceRecords.Add(mainSourceEntity);
+                long id = Convert.ToInt64(bo.Id);
+                mainSourceEntity = cmd.MMainSourceRecords.FirstOrDefault(o => o.MainSourceId == id);
+            }
+
+            if (mainSourceEntity == null)
+            {
+                mainSourceEntity = new MMainSourceRecord()
+                {
+                    LineNumber = bo.LineNumber,
+                    Area = bo.AreaName.ToString(),
+                    CaseNumber = bo.CaseNumber,
+                    CreateBy = bo.CreateBy,
+                    CreateTime = bo.CreateTime,
+                    DiseaseCategory = bo.DiseaseCategoryName.ToString(),
+                    DiseaseName = bo.DiseaseName.ToString(),
+                    UpdateBy = bo.UpdateBy,
+                    UpdateTime = bo.UpdateTime,
+                };
+                cmd.MMainSourceRecords.Add(mainSourceEntity);
+            }
+            else
+            {
+                mainSourceEntity.Area = bo.AreaName.ToString();
+                mainSourceEntity.CaseNumber = bo.CaseNumber;
+                mainSourceEntity.CreateBy = bo.CreateBy;
+                mainSourceEntity.CreateTime = bo.CreateTime;
+                mainSourceEntity.DiseaseCategory = bo.DiseaseCategoryName.ToString();
+                mainSourceEntity.DiseaseName = bo.DiseaseName.ToString();
+                mainSourceEntity.UpdateBy = bo.UpdateBy;
+                mainSourceEntity.UpdateTime = bo.UpdateTime;
+                mainSourceEntity.LineNumber = bo.LineNumber;
+                cmd.Entry(mainSourceEntity).State = System.Data.EntityState.Modified;
+            }
             cmd.SaveChanges();
 
             #region Age
