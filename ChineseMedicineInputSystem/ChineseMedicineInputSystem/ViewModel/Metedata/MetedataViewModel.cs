@@ -207,7 +207,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
                     return false;
                 }
             }
-           
+
             return true;
         }
         public void AddDose()
@@ -304,11 +304,11 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         {
             var ageHandler = new AgeHandler();
             AgeList = ageHandler.LoadBAgeRecords().Select(o => o.Name as object).ToList();
-            SelectedAge = null;
+            SelectedAge = ageHandler.LoadDefaultBo().Name;
 
             var areaHandler = new AreaHandler();
             AreaList = areaHandler.LoadBos().Select(o => o.Name as object).ToList();
-            SelectedArea = null;
+            SelectedArea = areaHandler.LoadDefaultBo().Name;
 
             var diseaseCategoryHandler = new DiseaseCategoryHandler();
             DiseaseCategoryList = diseaseCategoryHandler.LoadBos().Select(o => o.Name as object).ToList();
@@ -340,7 +340,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
             var environmentHandler = new EnvironmentHandler();
             EnvironmentList = environmentHandler.LoadBos().Select(o => o.Name as object).ToList();
-            SelectedEnvironment = null;
+            SelectedEnvironment = environmentHandler.LoadDefaultBo().Name;
 
             var prescriptionHandler = new PrescriptionHandler();
             PrescriptionList = prescriptionHandler.LoadBos().Select(o => o.Name as object).ToList();
@@ -348,11 +348,11 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
             var seasonHandler = new SeasonHandler();
             SeasonList = seasonHandler.LoadBos().Select(o => o.Name as object).ToList();
-            SelectedSeason = null;
+            SelectedSeason = seasonHandler.LoadDefaultBo().Name;
 
             var sexHandler = new SexHandler();
             SexList = sexHandler.LoadBos().Select(o => o.Name as object).ToList();
-            SelectedSex = null;
+            SelectedSex = sexHandler.LoadDefaultBo().Name;
 
             var symptomHandler = new SymptomHandler();
             SymptomList = symptomHandler.LoadBos().Select(o => o.Name as object).ToList();
@@ -360,7 +360,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
 
             var syndromesHandler = new SyndromesHandler();
             SyndromeList = syndromesHandler.LoadBos().Select(o => o.Name as object).ToList();
-            SelectedSyndromes = new List<object>();
+            SelectedSyndromes = new List<object>() { syndromesHandler.LoadDefaultBo().Name };
         }
 
         private void ShowMessageWindow()

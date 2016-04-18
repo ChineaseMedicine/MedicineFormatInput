@@ -50,6 +50,22 @@ namespace CMD.DAL.DALs
                     }).ToList();
         }
 
+        public SyndromesBo LoadDefaultBo()
+        {
+            var cmd = new CMDBasicEntities();
+            var record = cmd.BSyndromesRecords.FirstOrDefault(o => o.Name == "(无)");
+            return new SyndromesBo
+            {
+                Id = record.Id,
+                CreateBy = record.CreateBy,
+                CreateTime = record.CreateTime,
+                IsActive = record.IsActive,
+                Name = record.Name,
+                UpdateBy = record.UpdateBy,
+                UpdateTime = record.UpdateTime,
+            };
+        }
+
         public override bool DeleteRecord(long id)
         {
             bool result = true;

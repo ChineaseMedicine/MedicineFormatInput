@@ -42,6 +42,22 @@ namespace CMD.DAL.DALs
             return cmd.BAgeRecords.Where(o => 1 == 1).ToList();
         }
 
+        public AgeBo LoadDefaultBo()
+        {
+            var cmd = new CMDBasicEntities();
+            var record = cmd.BAgeRecords.FirstOrDefault(o => o.Name == "(无)");
+            return new AgeBo
+            {
+                Id = record.Id,
+                CreateBy = record.CreateBy,
+                CreateTime = record.CreateTime,
+                IsActive = record.IsActive,
+                Name = record.Name,
+                UpdateBy = record.UpdateBy,
+                UpdateTime = record.UpdateTime,
+            };
+        }
+
         public bool DeleteBAgeRecord(long id)
         {
             bool result = true;

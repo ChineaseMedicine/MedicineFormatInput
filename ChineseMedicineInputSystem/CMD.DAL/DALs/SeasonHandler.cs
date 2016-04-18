@@ -36,6 +36,22 @@ namespace CMD.DAL.DALs
             return false;
         }
 
+        public SeasonBo LoadDefaultBo()
+        {
+            var cmd = new CMDBasicEntities();
+            var record =  cmd.BSeasonRecords.FirstOrDefault(o=>o.Name == "(无)");
+            return new SeasonBo
+            {
+                Id = record.Id,
+                CreateBy = record.CreateBy,
+                CreateTime = record.CreateTime,
+                IsActive = record.IsActive,
+                Name = record.Name,
+                UpdateBy = record.UpdateBy,
+                UpdateTime = record.UpdateTime,
+            };
+        }
+
         public override List<SeasonBo> LoadBos()
         {
             var cmd = new CMDBasicEntities();

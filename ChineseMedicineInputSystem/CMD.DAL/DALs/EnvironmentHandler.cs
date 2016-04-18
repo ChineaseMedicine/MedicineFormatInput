@@ -52,6 +52,22 @@ namespace CMD.DAL.DALs
                     }).ToList();
         }
 
+        public EnvironmentBo LoadDefaultBo()
+        {
+            var cmd = new CMDBasicEntities();
+            var record = cmd.BEnvironmentRecords.FirstOrDefault(o => o.Name == "(无)");
+            return new EnvironmentBo
+            {
+                Id = record.Id,
+                CreateBy = record.CreateBy,
+                CreateTime = record.CreateTime,
+                IsActive = record.IsActive,
+                Name = record.Name,
+                UpdateBy = record.UpdateBy,
+                UpdateTime = record.UpdateTime,
+            };
+        }
+
         public override bool DeleteRecord(long id)
         {
             bool result = true;
