@@ -132,7 +132,7 @@ namespace CMD.DAL.DALs
                 result.Add(new MeteDataBo()
                 {
                     Id = itemEntity.MainSourceId,
-                    AgeName = age.AgeName,
+                    AgeName = null == age ? string.Empty : age.AgeName,
                     AreaName = itemEntity.Area,
                     CreateBy = itemEntity.CreateBy,
                     CreateTime = itemEntity.CreateTime,
@@ -141,12 +141,12 @@ namespace CMD.DAL.DALs
                     //DiseasePropertyName = diseaseProperty.DiseasePropertyCategoryName,
                     Dosageformses = dosageformses.Select(o => o.DosageName as object).ToList(),
                     DrugNames = drugs.Select(o => new DrugBoInput { DrugName = o.DrugName, Dose = o.Dose ?? 0 } as object).ToList(),
-                    DynastyName = dynasty.DynastyName,
+                    DynastyName = null == dynasty ? string.Empty : dynasty.DynastyName,
                     EnvironmentName = null == season ? string.Empty : environment.EnvironmentName,
                     Prescriptions = prescriptions.Select(o => o.FamousPrescriptionName as object).ToList(),
                     Symptoms = symptoms.Select(o => o.SymptomName as object).ToList(),
                     Syndromes = syndromes.Select(o => o.SyndromesName as object).ToList(),
-                    SexName = sex.SexName,
+                    SexName = null == sex ? string.Empty : sex.SexName,
                     SeasonName = null == season ? string.Empty : season.SeasonName,
                     UpdateBy = itemEntity.UpdateBy,
                     UpdateTime = itemEntity.UpdateTime,
