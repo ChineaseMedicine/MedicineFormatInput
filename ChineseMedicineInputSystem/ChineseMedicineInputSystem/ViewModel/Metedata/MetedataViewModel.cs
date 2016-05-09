@@ -237,6 +237,7 @@ namespace ChineseMedicineInputSystem.ViewModel.Metedata
         {
             TitleName = "新建元数据窗口";
             IsCreateMode = true;
+            SelectedItem = null;
             LoadData();
             ShowMessageWindow();
         }
